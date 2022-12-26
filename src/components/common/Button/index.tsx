@@ -2,7 +2,7 @@ import { ButtonProps, Button as MuiButton } from '@mui/material'
 import { useTheme } from 'hooks/common'
 
 interface Props extends ButtonProps {
-  children: JSX.Element
+  children: JSX.Element | string | string[]
 }
 
 const Button = ({ children, variant, color, ...props }: Props) => {

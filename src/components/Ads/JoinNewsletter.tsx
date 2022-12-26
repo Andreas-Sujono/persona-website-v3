@@ -6,7 +6,7 @@ import { Box } from '@mui/material'
 import { useTheme } from 'hooks/common'
 import bgImage from 'assets/home/join-class.png'
 
-function JoinClass() {
+function JoinNewsletter() {
   const theme = useTheme()
   return (
     <Box
@@ -41,7 +41,7 @@ function JoinClass() {
             lineHeight: '1.8rem',
           }}
         >
-          Join Class to Learn Web Development from the Best Engineer
+          Join My NewsLetter
         </Text>
         <Text
           color={theme.text.secondary}
@@ -51,8 +51,8 @@ function JoinClass() {
             mt: '0.8rem',
           }}
         >
-          Upskills your skills to learn the most up to date web frontend
-          technologies and other software enginering skills
+          Read Up to date web frontend technologies and other software
+          enginering skills
         </Text>
         <Button
           sx={{
@@ -61,7 +61,7 @@ function JoinClass() {
             left: 0,
           }}
         >
-          Join Class
+          Join Newsletter
         </Button>
       </Box>
       <Box>
@@ -78,4 +78,4 @@ function JoinClass() {
   )
 }
 
-export default memo(JoinClass)
+export default memo(JoinNewsletter)

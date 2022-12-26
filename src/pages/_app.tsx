@@ -23,7 +23,7 @@ export default function App({ Component, pageProps }: AppProps) {
           name="keywords"
           content="seo, search engine optimization, Andreas Sujono, full stack engineer, hiring, frontend developer, frontend engineer, engineer, tech, student, nanyang technological university"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon_ico/favicon.ico" />
       </Head>
       <main className={fontFamily.className}>
         <ThemeProvider>
