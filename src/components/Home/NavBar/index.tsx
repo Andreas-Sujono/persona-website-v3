@@ -39,7 +39,14 @@ function NavBar() {
       }}
     >
       <Grid item>
-        <Image src={avatarImage} alt="Andreas" width="24px" height="24px" />
+        <Image
+          src={avatarImage}
+          alt="Andreas"
+          style={{
+            width: '24px',
+            height: '24px',
+          }}
+        />
       </Grid>
       {navbarItems.map((item) => (
         <Grid item key={item.label}>

@@ -3,7 +3,7 @@ import { TypographyVariant } from '@mui/material/styles'
 import { useTheme } from 'hooks/common'
 
 interface Props extends TypographyProps {
-  children: JSX.Element | string
+  children: any
   variant?: TypographyVariant
   color?: string
 }

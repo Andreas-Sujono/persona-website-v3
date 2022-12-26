@@ -1,7 +1,7 @@
 import { Box, BoxProps } from '@mui/material'
 
 interface Props extends BoxProps {
-  children: JSX.Element | string | string[] | JSX.Element[]
+  children: any
 }
 
 const Content = ({ children, ...props }: Props) => {

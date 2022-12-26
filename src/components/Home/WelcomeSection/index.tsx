@@ -69,7 +69,7 @@ function WelcomeSection() {
                 ' a Full Stack Developer',
                 ' a Blockchain Developer',
               ]}
-              waitBeforeDeleteMs="3000"
+              waitBeforeDeleteMs={3000}
             >
               {({ currentText, fullCurrentText }) => (
                 <span aria-label={fullCurrentText}>{currentText}</span>
@@ -93,8 +93,6 @@ function WelcomeSection() {
       </Content>
       <Image
         src={bgImage}
-        width="auto"
-        height="auto"
         style={{
           width: '120%',
           maxHeight: '100vh',
@@ -106,8 +104,6 @@ function WelcomeSection() {
       />
       <Image
         src={bgImage2}
-        width="auto"
-        height="auto"
         style={{
           width: '400px',
           maxHeight: '500px',
@@ -119,8 +115,6 @@ function WelcomeSection() {
       />
       <Image
         src={avatarImage}
-        width="auto"
-        height="auto"
         style={{
           width: '120px',
           maxHeight: '80px',

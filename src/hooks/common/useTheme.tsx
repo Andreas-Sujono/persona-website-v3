@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import {
-  ThemeProvider as MUIThemeProvider,
   createTheme,
+  ThemeProvider as MUIThemeProvider,
 } from '@mui/material/styles'
 
 interface ThemeContext {

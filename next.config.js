@@ -46,7 +46,6 @@ const nextConfig = {
   ) {
     return {
       '/': { page: '/' },
-      '/blogs': { page: '/blogs' },
     }
   },
   async headers() {
