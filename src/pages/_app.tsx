@@ -1,13 +1,13 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
-import Head from 'next/head'
-import { ThemeProvider } from 'hooks/common/useTheme'
-import { Roboto } from '@next/font/google'
+import '../styles/globals.css';
+import type { AppProps } from 'next/app';
+import Head from 'next/head';
+import { ThemeProvider } from 'hooks/common/useTheme';
+import { Roboto } from '@next/font/google';
 
 const fontFamily = Roboto({
   subsets: ['latin'],
   weight: ['300', '400', '500', '700'],
-})
+});
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -31,5 +31,5 @@ export default function App({ Component, pageProps }: AppProps) {
         </ThemeProvider>
       </main>
     </>
-  )
+  );
 }

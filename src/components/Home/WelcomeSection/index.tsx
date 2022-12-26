@@ -1,17 +1,17 @@
-import React, { memo } from 'react'
-import { Typewriting } from 'react-typewriting'
-import LightSpeed from 'react-reveal/LightSpeed'
-import Fade from 'react-reveal/Fade'
-import Container from 'components/common/Container'
-import Content from 'components/common/Container/Content'
-import Text from 'components/common/Text'
-import Button from 'components/common/Button'
-import Image from 'next/image'
+import React, { memo } from 'react';
+import { Typewriting } from 'react-typewriting';
+import LightSpeed from 'react-reveal/LightSpeed';
+import Fade from 'react-reveal/Fade';
+import Container from 'components/common/Container';
+import Content from 'components/common/Container/Content';
+import Text from 'components/common/Text';
+import Button from 'components/common/Button';
+import Image from 'next/image';
 // import resumePDF from 'assets/Andreas_Resume.pdf'
-import bgImage from 'assets/home/welcome-bg.svg'
-import bgImage2 from 'assets/home/welcome-img.png'
-import avatarImage from 'assets/home/avatar.png'
-import { Box } from '@mui/material'
+import bgImage from 'assets/home/welcome-bg.svg';
+import bgImage2 from 'assets/home/welcome-img.png';
+import avatarImage from 'assets/home/avatar.png';
+import { Box } from '@mui/material';
 // import SocialMedia from './SocialMedia'
 
 function WelcomeSection() {
@@ -125,7 +125,7 @@ function WelcomeSection() {
         alt=""
       />
     </Container>
-  )
+  );
 }
 
-export default memo(WelcomeSection)
+export default memo(WelcomeSection);

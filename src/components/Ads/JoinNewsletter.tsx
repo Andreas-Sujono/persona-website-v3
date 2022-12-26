@@ -1,13 +1,13 @@
-import React, { memo } from 'react'
-import Text from 'components/common/Text'
-import Button from 'components/common/Button'
-import Image from 'next/image'
-import { Box } from '@mui/material'
-import { useTheme } from 'hooks/common'
-import bgImage from 'assets/home/join-class.png'
+import React, { memo } from 'react';
+import Text from 'components/common/Text';
+import Button from 'components/common/Button';
+import Image from 'next/image';
+import { Box } from '@mui/material';
+import { useTheme } from 'hooks/common';
+import bgImage from 'assets/home/join-class.png';
 
 function JoinNewsletter() {
-  const theme = useTheme()
+  const theme = useTheme();
   return (
     <Box
       sx={{
@@ -75,7 +75,7 @@ function JoinNewsletter() {
         />
       </Box>
     </Box>
-  )
+  );
 }
 
-export default memo(JoinNewsletter)
+export default memo(JoinNewsletter);

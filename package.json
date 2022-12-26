@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "npm run build && next export -o build"
+    "export": "npm run build && next export -o build",
+    "lint:fix": "eslint --fix ./src"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",

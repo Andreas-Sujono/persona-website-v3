@@ -1,13 +1,13 @@
-import { Box, BoxProps } from '@mui/material'
-import { useTheme } from 'hooks/common'
+import { Box, BoxProps } from '@mui/material';
+import { useTheme } from 'hooks/common';
 
 interface Props extends BoxProps {
-  children: JSX.Element | string | string[] | JSX.Element[]
-  background?: string
+  children: JSX.Element | string | string[] | JSX.Element[];
+  background?: string;
 }
 
 const Container = ({ children, background, ...props }: Props) => {
-  const theme = useTheme()
+  const theme = useTheme();
   return (
     <Box
       style={{
@@ -17,7 +17,7 @@ const Container = ({ children, background, ...props }: Props) => {
     >
       {children}
     </Box>
-  )
-}
+  );
+};
 
-export default Container
+export default Container;

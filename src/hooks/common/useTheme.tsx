@@ -1,24 +1,24 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState } from 'react';
 import {
   createTheme,
   ThemeProvider as MUIThemeProvider,
-} from '@mui/material/styles'
+} from '@mui/material/styles';
 
 interface ThemeContext {
   bg: {
-    primary: string
-    secondary: string
-  }
+    primary: string;
+    secondary: string;
+  };
   text: {
-    primary: string
-    secondary: string
-    highlight: string
-  }
+    primary: string;
+    secondary: string;
+    highlight: string;
+  };
   color: {
-    success: string
-    warning: string
-    error: string
-  }
+    success: string;
+    warning: string;
+    error: string;
+  };
 }
 
 const defaultTheme: ThemeContext = {
@@ -36,7 +36,7 @@ const defaultTheme: ThemeContext = {
     warning: '',
     error: '',
   },
-}
+};
 
 const lightTheme = {
   primary: {
@@ -78,8 +78,8 @@ const lightTheme = {
   // two indexes within its tonal palette.
   // E.g., shift from Red 500 to Red 300 or Red 700.
   tonalOffset: 0.2,
-}
-const chosenTheme = lightTheme
+};
+const chosenTheme = lightTheme;
 
 const muiTheme = createTheme({
   typography: {
@@ -108,9 +108,9 @@ const muiTheme = createTheme({
     },
   },
   palette: chosenTheme,
-})
+});
 
-const themeContext = React.createContext<ThemeContext>(defaultTheme)
+const themeContext = React.createContext<ThemeContext>(defaultTheme);
 
 export const ThemeProvider = ({ children }: { children: JSX.Element }) => {
   const [themeValue, setThemeValue] = useState<ThemeContext>({
@@ -128,17 +128,17 @@ export const ThemeProvider = ({ children }: { children: JSX.Element }) => {
       warning: chosenTheme.warning.main,
       error: chosenTheme.error.main,
     },
-  })
+  });
   return (
     <MUIThemeProvider theme={muiTheme}>
       <themeContext.Provider value={themeValue}>
         {children}
       </themeContext.Provider>
     </MUIThemeProvider>
-  )
-}
+  );
+};
 
 const useTheme = (): ThemeContext => {
-  return useContext(themeContext)
-}
-export default useTheme
+  return useContext(themeContext);
+};
+export default useTheme;

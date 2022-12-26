@@ -1,8 +1,8 @@
-import React, { memo } from 'react'
-import Text from 'components/common/Text'
-import Image from 'next/image'
-import avatarImage from 'assets/home/avatar.png'
-import { Box, Grid } from '@mui/material'
+import React, { memo } from 'react';
+import Text from 'components/common/Text';
+import Image from 'next/image';
+import avatarImage from 'assets/home/avatar.png';
+import { Box, Grid } from '@mui/material';
 
 const navbarItems = [
   {
@@ -25,7 +25,7 @@ const navbarItems = [
     label: 'Contact Me',
     path: '/contact-me',
   },
-]
+];
 
 function NavBar() {
   return (
@@ -54,7 +54,7 @@ function NavBar() {
         </Grid>
       ))}
     </Grid>
-  )
+  );
 }
 
-export default memo(NavBar)
+export default memo(NavBar);

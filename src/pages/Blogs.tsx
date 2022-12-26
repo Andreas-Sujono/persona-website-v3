@@ -1,5 +1,5 @@
-import Head from 'next/head'
-import BlogsComponent from 'components/Blogs'
+import Head from 'next/head';
+import BlogsComponent from 'components/Blogs';
 
 export default function Blogs() {
   return (
@@ -9,5 +9,5 @@ export default function Blogs() {
       </Head>
       <BlogsComponent />
     </>
-  )
+  );
 }

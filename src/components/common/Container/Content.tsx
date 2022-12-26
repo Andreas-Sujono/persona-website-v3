@@ -1,7 +1,7 @@
-import { Box, BoxProps } from '@mui/material'
+import { Box, BoxProps } from '@mui/material';
 
 interface Props extends BoxProps {
-  children: any
+  children: any;
 }
 
 const Content = ({ children, ...props }: Props) => {
@@ -9,7 +9,7 @@ const Content = ({ children, ...props }: Props) => {
     <Box maxWidth="lg" style={{ margin: 'auto', padding: '1rem' }} {...props}>
       {children}
     </Box>
-  )
-}
+  );
+};
 
-export default Content
+export default Content;

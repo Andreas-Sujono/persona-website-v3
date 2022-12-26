@@ -1,21 +1,21 @@
-import React, { memo } from 'react'
-import Container from 'components/common/Container'
-import Content from 'components/common/Container/Content'
-import Text from 'components/common/Text'
-import Button from 'components/common/Button'
-import Image from 'next/image'
-import { Box } from '@mui/material'
-import { useTheme } from 'hooks/common'
-import styled from '@emotion/styled'
+import React, { memo } from 'react';
+import Container from 'components/common/Container';
+import Content from 'components/common/Container/Content';
+import Text from 'components/common/Text';
+import Button from 'components/common/Button';
+import Image from 'next/image';
+import { Box } from '@mui/material';
+import { useTheme } from 'hooks/common';
+import styled from '@emotion/styled';
 
 const StyledTitle = styled(Text)`
   font-size: 2.5rem;
   font-weight: 600;
   margin-right: 1rem;
-`
+`;
 
 function Statistics() {
-  const theme = useTheme()
+  const theme = useTheme();
   return (
     <Box
       sx={{
@@ -86,7 +86,7 @@ function Statistics() {
         </Text>
       </Box>
     </Box>
-  )
+  );
 }
 
-export default memo(Statistics)
+export default memo(Statistics);
