@@ -2,10 +2,10 @@
 
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self';
+  script-src 'self' 'unsafe-eval';
   child-src 'self';
-  style-src 'self';
-  font-src 'self';  
+  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/css2 https://fonts.gstatic.com;
+  font-src 'self' https://fonts.googleapis.com/css2 https://fonts.gstatic.com;  
 `
 
 const securityHeaders = [

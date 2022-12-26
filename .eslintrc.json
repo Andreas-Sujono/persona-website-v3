@@ -13,6 +13,6 @@
     }
   },
   "rules": {
-    "import/named": 0
+    "import/named": 1
   }
 }

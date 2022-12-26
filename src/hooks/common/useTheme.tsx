@@ -12,6 +12,7 @@ interface ThemeContext {
   text: {
     primary: string
     secondary: string
+    highlight: string
   }
   color: {
     success: string
@@ -28,6 +29,7 @@ const defaultTheme: ThemeContext = {
   text: {
     primary: '',
     secondary: '',
+    highlight: '',
   },
   color: {
     success: '',
@@ -39,19 +41,26 @@ const defaultTheme: ThemeContext = {
 const lightTheme = {
   primary: {
     // light: will be calculated from palette.primary.main,
-    main: '#ff4400',
+    main: '#E21A6E',
     // dark: will be calculated from palette.primary.main,
     // contrastText: will be calculated to contrast with palette.primary.main
   },
+  background: {
+    default: '#ffffff',
+    secondary: '#FAFAFA',
+  },
   secondary: {
     // light: '#0066ff',
-    main: '#0044ff',
+    main: '#E21A6E',
     // dark: will be calculated from palette.secondary.main,
     // contrastText: '#ffcc00',
   },
+  highlight: {
+    main: '#E21A6E',
+  },
   text: {
-    primary: '#2a2a2a',
-    secondary: '#eeeeee',
+    primary: '#252525',
+    secondary: '#a3a2a2',
   },
   success: {
     main: '#30c461',
@@ -76,7 +85,7 @@ const muiTheme = createTheme({
   typography: {
     // In Chinese and Japanese the characters are usually larger,
     // so a smaller fontsize may be appropriate.
-    fontFamily: 'Raleway, Arial',
+    fontFamily: 'Roboto, sans-serif',
     fontSize: 16,
     htmlFontSize: 16,
     h1: {
@@ -106,12 +115,13 @@ const themeContext = React.createContext<ThemeContext>(defaultTheme)
 export const ThemeProvider = ({ children }: { children: JSX.Element }) => {
   const [themeValue, setThemeValue] = useState<ThemeContext>({
     bg: {
-      primary: chosenTheme.primary.main,
-      secondary: chosenTheme.secondary.main,
+      primary: chosenTheme.background.default,
+      secondary: chosenTheme.background.secondary,
     },
     text: {
       primary: chosenTheme.text.primary,
       secondary: chosenTheme.text.secondary,
+      highlight: chosenTheme.highlight.main,
     },
     color: {
       success: chosenTheme.success.main,
