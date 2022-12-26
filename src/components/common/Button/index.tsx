@@ -1,7 +1,7 @@
-import { ButtonProps, Button as MuiButton } from '@mui/material';
+import MuiButton, { ButtonProps } from '@mui/material/Button';
 import { useTheme } from 'hooks/common';
 
-interface Props extends ButtonProps {
+export interface Props extends ButtonProps {
   children: JSX.Element | string | string[];
 }
 
