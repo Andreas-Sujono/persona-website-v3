@@ -9,6 +9,8 @@ import Button from 'components/common/Button'
 import Image from 'next/image'
 // import resumePDF from 'assets/Andreas_Resume.pdf'
 import bgImage from 'assets/home/welcome-bg.svg'
+import bgImage2 from 'assets/home/welcome-img.png'
+import avatarImage from 'assets/home/avatar.png'
 import { Box } from '@mui/material'
 // import SocialMedia from './SocialMedia'
 
@@ -26,13 +28,18 @@ function WelcomeSection() {
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
-          height: '80vh',
+          height: '68vh',
           textAlign: 'center',
           position: 'relative',
           zIndex: 2,
         }}
       >
-        <Container className="title-container">
+        <Container
+          className="title-container"
+          sx={{
+            mt: 5,
+          }}
+        >
           <LightSpeed>
             <Text
               variant="h1"
@@ -94,6 +101,32 @@ function WelcomeSection() {
           position: 'absolute',
           top: '-5%',
           left: '-15%',
+        }}
+        alt=""
+      />
+      <Image
+        src={bgImage2}
+        width="auto"
+        height="auto"
+        style={{
+          width: '400px',
+          maxHeight: '500px',
+          position: 'absolute',
+          bottom: '-15%',
+          right: '0%',
+        }}
+        alt=""
+      />
+      <Image
+        src={avatarImage}
+        width="auto"
+        height="auto"
+        style={{
+          width: '120px',
+          maxHeight: '80px',
+          position: 'absolute',
+          top: '2%',
+          left: '10%',
         }}
         alt=""
       />

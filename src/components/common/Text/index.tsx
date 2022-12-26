@@ -3,9 +3,9 @@ import { TypographyVariant } from '@mui/material/styles'
 import { useTheme } from 'hooks/common'
 
 interface Props extends TypographyProps {
-  children: JSX.Element
-  variant: TypographyVariant
-  color: string
+  children: JSX.Element | string
+  variant?: TypographyVariant
+  color?: string
 }
 
 const Text = ({ children, variant, color, ...props }: Props) => {
