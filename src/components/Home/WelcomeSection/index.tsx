@@ -78,7 +78,7 @@ function WelcomeSection() {
           </Text>
         </Container>
         {/* <SocialMedia /> */}
-        <Fade>
+        {/* <Fade>
           <Button
             sx={{
               mt: 2,
@@ -89,7 +89,7 @@ function WelcomeSection() {
               Download Resume
             </a>
           </Button>
-        </Fade>
+        </Fade> */}
       </Content>
       <Image
         src={bgImage}
@@ -109,7 +109,7 @@ function WelcomeSection() {
           maxHeight: '500px',
           position: 'absolute',
           bottom: '-15%',
-          right: '0%',
+          right: '10%',
         }}
         alt=""
       />
