@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import Text from 'components/common/Text';
 import Image from 'next/image';
 import avatarImage from 'assets/home/avatar.png';
-import { Box, Grid } from '@mui/material';
+import { Box, FormControlLabel, Grid, Switch } from '@mui/material';
 import { useTheme } from 'hooks/common';
 
 const navbarItems = [
@@ -35,6 +35,10 @@ function NavBar() {
       sx={{
         position: 'sticky',
         top: 0,
+        zIndex: 10,
+        background: theme.bg.primary,
+        padding: '1rem 0 1rem 0',
+        boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.05)',
       }}
     >
       <Grid
@@ -44,7 +48,6 @@ function NavBar() {
         maxWidth="lg"
         sx={{
           margin: 'auto',
-          marginTop: '3rem',
           '> *:not(:last-child)': {
             marginRight: '5rem',
           },
@@ -66,7 +69,7 @@ function NavBar() {
           <Grid item key={item.label} sx={{}}>
             <Text
               sx={{
-                fontSize: '1rem',
+                fontSize: '0.9rem',
                 fontFamily: 'Rock Salt',
                 color: idx !== 0 ? theme.text.primary : theme.text.highlight,
                 cursor: 'pointer',
@@ -76,6 +79,19 @@ function NavBar() {
             </Text>
           </Grid>
         ))}
+        <FormControlLabel
+          control={
+            <Switch
+              checked={theme.theme === 'dark'}
+              onChange={theme.switchTheme}
+            />
+          }
+          label="Dark"
+          sx={{
+            color: theme.text.secondary,
+          }}
+          onChange={theme.switchTheme}
+        />
       </Grid>
     </Box>
   );

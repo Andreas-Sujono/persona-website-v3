@@ -73,9 +73,9 @@ function AboutMe() {
                     alt=""
                     style={{
                       width: '100%',
-                      maxWidth: '200px',
+                      maxWidth: '230px',
                       height: 'auto',
-                      maxHeight: '200px',
+                      maxHeight: '230px',
                       objectFit: 'cover',
                       zIndex: 1,
                       margin: 'auto',

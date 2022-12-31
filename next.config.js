@@ -1,12 +1,13 @@
 /** @type {import('next').NextConfig} */
 
 const ContentSecurityPolicy = `
-  default-src 'self';
+  default-src 'self' https://res.cloudinary.com;
   script-src 'self' 'unsafe-eval';
   child-src 'self';
   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/css2 https://fonts.gstatic.com;
   font-src 'self' https://fonts.googleapis.com/css2 https://fonts.gstatic.com;  
-`
+  img-src 'self' https://res.cloudinary.com
+`;
 
 const securityHeaders = [
   {
@@ -37,7 +38,7 @@ const securityHeaders = [
     key: 'Content-Security-Policy',
     value: ContentSecurityPolicy.replace(/\s{2,}/g, ' ').trim(),
   },
-]
+];
 
 const nextConfig = {
   exportPathMap: async function (
@@ -46,7 +47,7 @@ const nextConfig = {
   ) {
     return {
       '/': { page: '/' },
-    }
+    };
   },
   async headers() {
     return [
@@ -55,12 +56,12 @@ const nextConfig = {
         source: '/:path*',
         headers: securityHeaders,
       },
-    ]
+    ];
   },
   images: {
     unoptimized: true,
   },
   reactStrictMode: true,
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

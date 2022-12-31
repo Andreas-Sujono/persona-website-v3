@@ -36,7 +36,7 @@ function AboutMe() {
               width: '100%',
               mt: '4rem',
               position: 'relative',
-              minHeight: '65vh',
+              minHeight: '62vh',
             }}
           >
             <Image
@@ -44,7 +44,7 @@ function AboutMe() {
               alt="mainProject"
               style={{
                 width: 'auto',
-                maxWidth: '30vw',
+                maxWidth: '40vw',
                 height: 'auto',
                 objectFit: 'cover',
                 position: 'absolute',
@@ -57,7 +57,7 @@ function AboutMe() {
               alt="mainProject"
               style={{
                 width: 'auto',
-                maxWidth: '30vw',
+                maxWidth: '36vw',
                 height: 'auto',
                 objectFit: 'cover',
                 position: 'absolute',
