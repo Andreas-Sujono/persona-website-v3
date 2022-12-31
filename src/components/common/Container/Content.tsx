@@ -4,9 +4,13 @@ interface Props extends BoxProps {
   children: any;
 }
 
-const Content = ({ children, ...props }: Props) => {
+const Content = ({ children, sx = {}, ...props }: Props) => {
   return (
-    <Box maxWidth="lg" style={{ margin: 'auto', padding: '1rem' }} {...props}>
+    <Box
+      maxWidth="lg"
+      sx={{ margin: 'auto', padding: '1rem', ...sx }}
+      {...props}
+    >
       {children}
     </Box>
   );

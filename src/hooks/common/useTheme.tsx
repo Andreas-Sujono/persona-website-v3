@@ -8,6 +8,7 @@ interface ThemeContext {
   bg: {
     primary: string;
     secondary: string;
+    gradient: string;
   };
   text: {
     primary: string;
@@ -25,6 +26,7 @@ const defaultTheme: ThemeContext = {
   bg: {
     primary: '',
     secondary: '',
+    gradient: '',
   },
   text: {
     primary: '',
@@ -48,6 +50,7 @@ const lightTheme = {
   background: {
     default: '#ffffff',
     secondary: '#FAFAFA',
+    gradient: 'linear-gradient(90.15deg, #E21A6E 0.68%, #6485F9 99.87%)',
   },
   secondary: {
     // light: '#0066ff',
@@ -117,6 +120,7 @@ export const ThemeProvider = ({ children }: { children: JSX.Element }) => {
     bg: {
       primary: chosenTheme.background.default,
       secondary: chosenTheme.background.secondary,
+      gradient: chosenTheme.background.gradient,
     },
     text: {
       primary: chosenTheme.text.primary,

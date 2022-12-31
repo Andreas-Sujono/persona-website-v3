@@ -11,8 +11,9 @@ const Button = ({ children, variant, color, ...props }: Props) => {
     <MuiButton
       style={{
         // background: color || theme.text.highlight,
-        borderRadius: '8px',
-        padding: '8px 24px',
+        borderRadius: '1rem',
+        padding: '6px 24px',
+        minWidth: '160px',
       }}
       variant={variant || 'contained'}
       {...props}

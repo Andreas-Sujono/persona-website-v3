@@ -59,6 +59,7 @@ function JoinClass() {
             position: 'absolute',
             bottom: '-42px',
             left: 0,
+            background: theme.bg.gradient,
           }}
         >
           Join Class

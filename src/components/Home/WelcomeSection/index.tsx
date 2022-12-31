@@ -12,9 +12,11 @@ import bgImage from 'assets/home/welcome-bg.svg';
 import bgImage2 from 'assets/home/welcome-img.png';
 import avatarImage from 'assets/home/avatar.png';
 import { Box } from '@mui/material';
+import { useTheme } from 'hooks/common';
 // import SocialMedia from './SocialMedia'
 
 function WelcomeSection() {
+  const theme = useTheme();
   return (
     <Container
       id="welcome-section"
@@ -28,7 +30,7 @@ function WelcomeSection() {
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
-          height: '68vh',
+          height: '65vh',
           textAlign: 'center',
           position: 'relative',
           zIndex: 2,
@@ -60,6 +62,7 @@ function WelcomeSection() {
               textShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
               mt: 3,
               fontWeight: '500',
+              opacity: 0.5,
             }}
           >
             I&apos;m
@@ -105,11 +108,11 @@ function WelcomeSection() {
       <Image
         src={bgImage2}
         style={{
-          width: '400px',
-          maxHeight: '500px',
+          width: '380px',
+          maxHeight: '460px',
           position: 'absolute',
-          bottom: '-15%',
-          right: '10%',
+          bottom: '-14%',
+          right: '2%',
         }}
         alt=""
       />
