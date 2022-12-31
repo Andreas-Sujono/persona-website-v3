@@ -16,7 +16,7 @@ function JoinClass() {
         justifyContent: 'center',
         alignItems: 'center',
         maxWidth: '900px',
-        background: theme.bg.primary,
+        background: theme.bg.secondary,
         // boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
         borderRadius: '1rem',
         padding: '0.5rem 1.5rem',

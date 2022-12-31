@@ -26,7 +26,7 @@ function Statistics() {
         textAlign: 'center',
         position: 'relative',
         zIndex: 2,
-        background: theme.bg.primary,
+        background: theme.bg.secondary,
         boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
         borderRadius: '2rem',
         padding: '0.6rem 1rem',

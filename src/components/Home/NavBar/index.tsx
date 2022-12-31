@@ -33,7 +33,6 @@ function NavBar() {
   return (
     <Box
       sx={{
-        background: 'white',
         position: 'sticky',
         top: 0,
       }}
@@ -56,9 +55,10 @@ function NavBar() {
             src={avatarImage}
             alt="Andreas"
             style={{
-              width: '56px',
+              width: '48px',
               height: '48px',
               borderRadius: '50%',
+              objectFit: 'cover',
             }}
           />
         </Grid>

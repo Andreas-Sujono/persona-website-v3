@@ -87,14 +87,14 @@ function AboutMe() {
               <Grid item md={6}>
                 <Text
                   sx={{
-                    fontSize: '1.1rem',
+                    fontSize: '1.15rem',
                     lineHeight: '2rem',
                     margin: 'auto',
                     display: 'block',
                     ml: '2rem',
                   }}
                 >
-                  Andreas is a passionate and tech enthusiast with 4+ years of
+                  Andreas is a passionate and tech enthusiast with 5+ years of
                   working experience in more than 7 different companies with
                   diverse industries such as robotics, ed-tech, gaming,
                   blockchain, data, and cybersecurity company. He has expertise
@@ -155,6 +155,7 @@ function AboutMe() {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
+            height: '800px',
           }}
         >
           <Image
@@ -162,8 +163,7 @@ function AboutMe() {
             alt=""
             style={{
               width: '100%',
-              height: 'auto',
-              maxHeight: '800px',
+              height: '100%',
               objectFit: 'cover',
               zIndex: 1,
               borderRadius: '1rem 0 0 1rem',

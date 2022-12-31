@@ -1,10 +1,11 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useMemo, useState } from 'react';
 import {
   createTheme,
   ThemeProvider as MUIThemeProvider,
 } from '@mui/material/styles';
 
 interface ThemeContext {
+  theme: 'dark' | 'light';
   bg: {
     primary: string;
     secondary: string;
@@ -20,27 +21,11 @@ interface ThemeContext {
     warning: string;
     error: string;
   };
+  switchTheme: () => void;
 }
 
-const defaultTheme: ThemeContext = {
-  bg: {
-    primary: '',
-    secondary: '',
-    gradient: '',
-  },
-  text: {
-    primary: '',
-    secondary: '',
-    highlight: '',
-  },
-  color: {
-    success: '',
-    warning: '',
-    error: '',
-  },
-};
-
 const lightTheme = {
+  theme: 'light',
   primary: {
     // light: will be calculated from palette.primary.main,
     main: '#E21A6E',
@@ -82,7 +67,72 @@ const lightTheme = {
   // E.g., shift from Red 500 to Red 300 or Red 700.
   tonalOffset: 0.2,
 };
+
+const darkTheme = {
+  theme: 'dark',
+  primary: {
+    // light: will be calculated from palette.primary.main,
+    main: '#E21A6E',
+    // dark: will be calculated from palette.primary.main,
+    // contrastText: will be calculated to contrast with palette.primary.main
+  },
+  background: {
+    default: '#141A3E',
+    secondary: '#1E2652',
+    gradient: 'linear-gradient(90.15deg, #E21A6E 0.68%, #6485F9 99.87%)',
+  },
+  secondary: {
+    // light: '#0066ff',
+    main: '#E21A6E',
+    // dark: will be calculated from palette.secondary.main,
+    // contrastText: '#ffcc00',
+  },
+  highlight: {
+    main: '#E21A6E',
+  },
+  text: {
+    primary: '#ffffff',
+    secondary: '#a3a2a2',
+  },
+  success: {
+    main: '#30c461',
+  },
+  error: {
+    main: '#eb3f74',
+  },
+  warning: {
+    main: '#d2b427',
+  },
+  // Used by `getContrastText()` to maximize the contrast between
+  // the background and the text.
+  contrastThreshold: 3,
+  // Used by the functions below to shift a color's luminance by approximately
+  // two indexes within its tonal palette.
+  // E.g., shift from Red 500 to Red 300 or Red 700.
+  tonalOffset: 0.2,
+};
+
 const chosenTheme = lightTheme;
+
+const defaultTheme: ThemeContext = {
+  theme: chosenTheme === lightTheme ? 'light' : 'dark',
+  bg: {
+    primary: '',
+    secondary: '',
+    gradient: '',
+  },
+  text: {
+    primary: '',
+    secondary: '',
+    highlight: '',
+  },
+  color: {
+    success: '',
+    warning: '',
+    error: '',
+  },
+  switchTheme: () => null,
+};
 
 const muiTheme = createTheme({
   typography: {
@@ -116,23 +166,35 @@ const muiTheme = createTheme({
 const themeContext = React.createContext<ThemeContext>(defaultTheme);
 
 export const ThemeProvider = ({ children }: { children: JSX.Element }) => {
-  const [themeValue, setThemeValue] = useState<ThemeContext>({
-    bg: {
-      primary: chosenTheme.background.default,
-      secondary: chosenTheme.background.secondary,
-      gradient: chosenTheme.background.gradient,
-    },
-    text: {
-      primary: chosenTheme.text.primary,
-      secondary: chosenTheme.text.secondary,
-      highlight: chosenTheme.highlight.main,
-    },
-    color: {
-      success: chosenTheme.success.main,
-      warning: chosenTheme.warning.main,
-      error: chosenTheme.error.main,
-    },
-  });
+  const [localTheme, setLocalTheme] = useState(chosenTheme);
+  const themeValue = useMemo(() => {
+    return {
+      theme: localTheme.theme as 'dark' | 'light',
+      bg: {
+        primary: localTheme.background.default,
+        secondary: localTheme.background.secondary,
+        gradient: localTheme.background.gradient,
+      },
+      text: {
+        primary: localTheme.text.primary,
+        secondary: localTheme.text.secondary,
+        highlight: localTheme.highlight.main,
+      },
+      color: {
+        success: localTheme.success.main,
+        warning: localTheme.warning.main,
+        error: localTheme.error.main,
+      },
+      switchTheme: () => {
+        if (themeValue.theme === 'light') {
+          setLocalTheme(darkTheme);
+        } else {
+          setLocalTheme(lightTheme);
+        }
+      },
+    };
+  }, [localTheme]);
+
   return (
     <MUIThemeProvider theme={muiTheme}>
       <themeContext.Provider value={themeValue}>

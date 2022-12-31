@@ -9,14 +9,17 @@ import Button from 'components/common/Button';
 import Image from 'next/image';
 // import resumePDF from 'assets/Andreas_Resume.pdf'
 import bgImage from 'assets/home/welcome-bg.svg';
-import bgImage2 from 'assets/home/welcome-img.png';
+import bgDarkImage from 'assets/home/welcome-bg-dark.svg';
+import decoratorImage from 'assets/home/welcome-img.png';
 import avatarImage from 'assets/home/avatar.png';
-import { Box } from '@mui/material';
+import { Box, FormControlLabel, Switch } from '@mui/material';
 import { useTheme } from 'hooks/common';
 // import SocialMedia from './SocialMedia'
 
 function WelcomeSection() {
   const theme = useTheme();
+  const welcomeBgImage = theme.theme === 'light' ? bgImage : bgDarkImage;
+
   return (
     <Container
       id="welcome-section"
@@ -95,7 +98,7 @@ function WelcomeSection() {
         </Fade> */}
       </Content>
       <Image
-        src={bgImage}
+        src={welcomeBgImage}
         style={{
           width: '120%',
           maxHeight: '100vh',
@@ -106,7 +109,7 @@ function WelcomeSection() {
         alt=""
       />
       <Image
-        src={bgImage2}
+        src={decoratorImage}
         style={{
           width: '380px',
           maxHeight: '460px',
@@ -116,17 +119,40 @@ function WelcomeSection() {
         }}
         alt=""
       />
-      <Image
-        src={avatarImage}
-        style={{
-          width: '120px',
-          maxHeight: '80px',
+      <Box
+        sx={{
           position: 'absolute',
           top: '2%',
           left: '10%',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          width: '80%',
         }}
-        alt=""
-      />
+      >
+        <Image
+          src={avatarImage}
+          style={{
+            width: '100px',
+            maxHeight: '70px',
+            objectFit: 'cover',
+          }}
+          alt=""
+        />
+        <FormControlLabel
+          control={
+            <Switch
+              checked={theme.theme === 'dark'}
+              onChange={theme.switchTheme}
+            />
+          }
+          label="Dark"
+          sx={{
+            color: 'white',
+          }}
+          onChange={theme.switchTheme}
+        />
+      </Box>
     </Container>
   );
 }

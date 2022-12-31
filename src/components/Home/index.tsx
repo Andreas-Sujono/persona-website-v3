@@ -5,10 +5,18 @@ import JoinClass from 'components/Ads/JoinClass';
 import Content from 'components/common/Container/Content';
 import NavBar from './NavBar';
 import AboutMe from './AboutMe';
+import MainProjects from './MainProjects';
+import { useTheme } from 'hooks/common';
 
 export default function Home() {
+  const theme = useTheme();
+
   return (
-    <Container>
+    <Container
+      style={{
+        background: theme.bg.primary,
+      }}
+    >
       <WelcomeSection />
       <Content>
         <Statistics />
@@ -16,6 +24,7 @@ export default function Home() {
       </Content>
       <NavBar />
       <AboutMe />
+      <MainProjects />
     </Container>
   );
 }
