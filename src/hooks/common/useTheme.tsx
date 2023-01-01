@@ -3,6 +3,7 @@ import {
   createTheme,
   ThemeProvider as MUIThemeProvider,
 } from '@mui/material/styles';
+import GlobalStyles from '@mui/material/GlobalStyles';
 
 interface ThemeContext {
   theme: 'dark' | 'light';
@@ -207,6 +208,17 @@ export const ThemeProvider = ({ children }: { children: JSX.Element }) => {
   return (
     <MUIThemeProvider theme={muiTheme}>
       <themeContext.Provider value={themeValue}>
+        <GlobalStyles
+          styles={{
+            body: {
+              background: themeValue.bg.primary,
+            },
+            html: {
+              background: themeValue.bg.primary,
+            },
+          }}
+        />
+
         {children}
       </themeContext.Provider>
     </MUIThemeProvider>

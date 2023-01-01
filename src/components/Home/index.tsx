@@ -17,6 +17,7 @@ import ReadBlogs from 'components/Ads/ReadBlogs';
 import SupportMe from 'components/Ads/SupportMe';
 import JoinCommunity from 'components/Ads/JoinCommunity';
 import Footer from './Footer';
+import useWindowDimensions from 'hooks/common/useDimension';
 
 const WelcomeSection = dynamic(() => import('./WelcomeSection'), {
   loading: () => <></>,
@@ -39,6 +40,8 @@ const Gallery = dynamic(() => import('./Gallery'), {
 
 export default function Home() {
   const theme = useTheme();
+  const { width } = useWindowDimensions();
+  const isMobile = width < 700;
 
   return (
     <Container
@@ -75,7 +78,7 @@ export default function Home() {
               mb: '2rem',
             },
             '> *:not(:last-child)': {
-              mr: '1rem',
+              mr: isMobile ? 0 : '1rem',
             },
             paddingY: {
               md: '3rem',

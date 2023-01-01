@@ -87,7 +87,7 @@ function JoinClass() {
             maxHeight: '160px',
             display: isMobile ? 'block' : 'block',
             position: isMobile ? 'absolute' : 'relative',
-            bottom: '-74px',
+            bottom: isMobile ? '-72px' : '-12px',
             right: 0,
             zIndex: 1,
             opacity: isMobile ? 0.5 : 1,
