@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3010",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -25,6 +25,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-reveal": "^1.2.2",
+    "react-swipeable": "^7.0.0",
     "react-typewriting": "^2.2.0",
     "recharts": "^2.2.0",
     "styled-components": "^5.3.6",
@@ -40,6 +41,7 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.11",
-    "prettier": "^2.8.1"
+    "prettier": "^2.8.1",
+    "sass": "^1.57.1"
   }
 }

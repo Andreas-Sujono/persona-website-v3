@@ -1,8 +1,10 @@
-import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { ThemeProvider } from 'hooks/common/useTheme';
 import { Roboto } from '@next/font/google';
+import Script from 'next/script';
+import '../styles/globals.css';
+import '../styles/carousel3d.scss';
 
 const fontFamily = Roboto({
   subsets: ['latin'],
@@ -25,6 +27,21 @@ export default function App({ Component, pageProps }: AppProps) {
         />
         <link rel="icon" href="/favicon_ico/favicon.ico" />
       </Head>
+
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-1DNZP0ZK9X"
+      ></Script>
+      <Script id="google-tag-manager">
+        {`
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+      
+        gtag('config', 'G-1DNZP0ZK9X');
+      </script>`}
+      </Script>
       <main className={fontFamily.className}>
         <ThemeProvider>
           <Component {...pageProps} />

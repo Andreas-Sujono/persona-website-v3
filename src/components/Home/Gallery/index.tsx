@@ -5,9 +5,11 @@ import Card from './Card';
 import galleryData from './data';
 import { useTheme } from 'hooks/common';
 import Content from 'components/common/Container/Content';
+import useWindowDimensions from 'hooks/common/useDimension';
 
 function Gallery() {
-  const column = [1, 2, 3];
+  const { width } = useWindowDimensions();
+  const column = width > 1000 ? [1, 2, 3, 4] : [1, 2, 3];
   const { length } = galleryData;
   const columnLength = column.length;
   const galleryChosen = (idx: number) =>
@@ -48,8 +50,13 @@ function Gallery() {
       >
         {column.map((_, idx1) => (
           <div className="galleryColumn" key={Math.random()}>
-            {galleryChosen(idx1).map((item2) => (
-              <Card image={item2.image} alt={item2.alt} key={Math.random()} />
+            {galleryChosen(idx1).map((item2, idx) => (
+              <Card
+                image={item2.image}
+                alt={item2.alt}
+                key={idx}
+                width={`calc(100vw / ${column.length})`}
+              />
             ))}
           </div>
         ))}

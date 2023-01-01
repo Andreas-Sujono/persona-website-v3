@@ -2,7 +2,7 @@
 
 const ContentSecurityPolicy = `
   default-src 'self' https://res.cloudinary.com;
-  script-src 'self' 'unsafe-eval';
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com;
   child-src 'self';
   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/css2 https://fonts.gstatic.com;
   font-src 'self' https://fonts.googleapis.com/css2 https://fonts.gstatic.com;  

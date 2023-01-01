@@ -25,8 +25,8 @@ const Container = styled.div`
   }
 `;
 
-function Card(props: { image: any; alt: string }) {
-  const { image, alt } = props;
+function Card(props: { image: any; alt: string; width: string }) {
+  const { image, alt, width } = props;
   return (
     <Container className="card">
       <Fade>
@@ -36,7 +36,7 @@ function Card(props: { image: any; alt: string }) {
           width={300}
           height={300}
           style={{
-            width: '33.4vw',
+            width: width || '33.4vw',
             height: 'auto',
             maxHeight: '300px',
             objectFit: 'cover',

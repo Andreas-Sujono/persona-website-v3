@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { Box } from '@mui/material';
 import { useTheme } from 'hooks/common';
 import bgImage from 'assets/home/join-class.png';
+import TextInput from 'components/common/Form/TextInput';
 
 function JoinNewsletter() {
   const theme = useTheme();
@@ -19,7 +20,8 @@ function JoinNewsletter() {
         background: theme.bg.secondary,
         // boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
         borderRadius: '1rem',
-        padding: '0.5rem 1.5rem',
+        padding: '1rem 1.5rem',
+        paddingBottom: '1rem',
         margin: 'auto',
         width: '100%',
         mt: 10,
@@ -48,12 +50,20 @@ function JoinNewsletter() {
           sx={{
             fontSize: '1rem',
             fontWeight: '400',
-            mt: '0.8rem',
+            mt: '0.4rem',
           }}
         >
           Read Up to date web frontend technologies and other software
           enginering skills
         </Text>
+        <TextInput
+          label=""
+          placeholder="Email Address"
+          sx={{
+            mt: '0.5rem',
+          }}
+          fullWidth
+        />
 
         <Button
           sx={{

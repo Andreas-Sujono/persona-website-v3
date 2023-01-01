@@ -10,6 +10,10 @@ import MainProjects from './MainProjects';
 import { useTheme } from 'hooks/common';
 import ProjectCertificates from './ProjectCertificates';
 import Gallery from './Gallery';
+import { Box } from '@mui/material';
+import ReadBlogs from 'components/Ads/ReadBlogs';
+import SupportMe from 'components/Ads/SupportMe';
+import JoinCommunity from 'components/Ads/JoinCommunity';
 
 export default function Home() {
   const theme = useTheme();
@@ -31,6 +35,23 @@ export default function Home() {
       <ProjectCertificates />
       <JoinNewsletter />
       <Gallery />
+      <Content>
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            '> *:not(:last-child)': {
+              mr: '1rem',
+            },
+            paddingY: '3rem',
+          }}
+        >
+          <ReadBlogs />
+          <SupportMe />
+          <JoinCommunity />
+        </Box>
+      </Content>
     </Container>
   );
 }
