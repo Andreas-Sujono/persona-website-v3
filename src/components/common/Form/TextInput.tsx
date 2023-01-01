@@ -1,17 +1,16 @@
 import TextField, { TextFieldProps } from '@mui/material/TextField';
 import { useTheme } from 'hooks/common';
 
-export default function TextInput(props: TextFieldProps) {
+export default function TextInput({ ...props }: TextFieldProps) {
   const theme = useTheme();
   return (
     <TextField
-      {...props}
       InputProps={{
         sx: {
           borderRadius: '1rem',
           padding: 0,
           '& label.Mui-focused': {
-            color: theme.text.primary,
+            color: (props?.sx as any)?.color || theme.text.primary,
           },
           '& fieldset': {
             border: 0,
@@ -20,12 +19,15 @@ export default function TextInput(props: TextFieldProps) {
         inputProps: {
           style: {
             padding: '12px 16px',
-            color: theme.text.primary,
-            border: `1px solid ${theme.text.secondary}`,
+            color: (props?.sx as any)?.color || theme.text.primary,
+            border: `1px solid ${
+              (props?.sx as any)?.color || theme.text.secondary
+            }`,
             borderRadius: '1rem',
           },
         },
       }}
+      {...props}
     />
   );
 }

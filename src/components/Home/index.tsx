@@ -14,6 +14,7 @@ import { Box } from '@mui/material';
 import ReadBlogs from 'components/Ads/ReadBlogs';
 import SupportMe from 'components/Ads/SupportMe';
 import JoinCommunity from 'components/Ads/JoinCommunity';
+import Footer from './Footer';
 
 export default function Home() {
   const theme = useTheme();
@@ -52,6 +53,7 @@ export default function Home() {
           <JoinCommunity />
         </Box>
       </Content>
+      <Footer />
     </Container>
   );
 }
