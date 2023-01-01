@@ -34,13 +34,12 @@ export default function App({ Component, pageProps }: AppProps) {
       ></Script>
       <Script id="google-tag-manager">
         {`
-        <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
       
         gtag('config', 'G-1DNZP0ZK9X');
-      </script>`}
+        `}
       </Script>
       <main className={fontFamily.className}>
         <ThemeProvider>

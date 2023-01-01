@@ -23,7 +23,6 @@ function SupportMe() {
         borderRadius: '1rem',
         padding: '1rem 1.5rem',
         paddingBottom: '2.5rem',
-        margin: 'auto',
         border: `1px solid ${theme.text.highlight}`,
         position: 'relative',
       }}

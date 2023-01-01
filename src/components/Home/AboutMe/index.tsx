@@ -14,6 +14,7 @@ import {
   PolarRadiusAxis,
   ResponsiveContainer,
 } from 'recharts';
+import useWindowDimensions from 'hooks/common/useDimension';
 
 const data = [
   {
@@ -49,12 +50,17 @@ const data = [
 ];
 
 function AboutMe() {
+  const { width } = useWindowDimensions();
+  const isMobile = width < 900;
+  const isSuperMobile = width < 900;
+
   return (
     <Grid
       container
       justifyContent="space-between"
       sx={{
         paddingTop: '5rem',
+        flexDirection: isMobile ? 'column-reverse' : 'row',
       }}
     >
       <Grid item xs={true}>
@@ -64,8 +70,22 @@ function AboutMe() {
             position: 'relative',
           }}
         >
-          <Content sx={{ position: 'relative', paddingLeft: '20%' }}>
-            <Grid container>
+          <Content
+            sx={{
+              position: 'relative',
+              paddingLeft: {
+                md: '20%',
+                xs: '16px',
+              },
+            }}
+          >
+            <Grid
+              container
+              justifyContent={{
+                md: 'flex-start',
+                xs: 'center',
+              }}
+            >
               <Grid item md={4}>
                 <Box>
                   <Image
@@ -92,6 +112,10 @@ function AboutMe() {
                     margin: 'auto',
                     display: 'block',
                     ml: '2rem',
+                    mt: {
+                      md: '0',
+                      xs: '1rem',
+                    },
                   }}
                 >
                   Andreas is a passionate and tech enthusiast with 5+ years of
@@ -106,10 +130,23 @@ function AboutMe() {
             <Grid
               container
               sx={{
-                mt: '5rem',
+                mt: {
+                  md: '5rem',
+                  xs: '2rem',
+                },
               }}
             >
-              <Grid item xs={6}>
+              <Grid
+                item
+                xs={12}
+                md={6}
+                sx={{
+                  paddingX: {
+                    md: '0',
+                    xs: '2rem',
+                  },
+                }}
+              >
                 <ResponsiveContainer width="100%" height="100%">
                   <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
                     <PolarGrid />
@@ -125,7 +162,21 @@ function AboutMe() {
                   </RadarChart>
                 </ResponsiveContainer>
               </Grid>
-              <Grid item xs={6}>
+              <Grid
+                item
+                xs={12}
+                md={6}
+                sx={{
+                  paddingX: {
+                    md: '0',
+                    xs: '2rem',
+                  },
+                  mt: {
+                    md: 0,
+                    xs: '1rem',
+                  },
+                }}
+              >
                 <Image
                   src={experienceImage}
                   alt=""
@@ -146,7 +197,10 @@ function AboutMe() {
       <Grid
         item
         sx={{
-          width: '30%',
+          width: {
+            md: '30%',
+            xs: '100%',
+          },
           position: 'relative',
         }}
       >
@@ -155,7 +209,7 @@ function AboutMe() {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            height: '800px',
+            height: isMobile ? '200px' : '800px',
           }}
         >
           <Image
@@ -164,6 +218,7 @@ function AboutMe() {
             style={{
               width: '100%',
               height: '100%',
+              maxHeight: isMobile ? '200px' : '800px',
               objectFit: 'cover',
               zIndex: 1,
               borderRadius: '1rem 0 0 1rem',
@@ -172,7 +227,10 @@ function AboutMe() {
           <Text
             sx={{
               zIndex: 2,
-              fontSize: '3rem',
+              fontSize: {
+                md: '3rem',
+                xs: '2.5rem',
+              },
               color: 'white',
               fontFamily: 'Rock Salt',
               textShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',

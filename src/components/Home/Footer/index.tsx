@@ -10,7 +10,8 @@ import avatarImage from 'assets/home/avatar.png';
 
 function Footer() {
   const theme = useTheme();
-  const textColor = 'white';
+  const titleTextColor = '#ffffff';
+  const textColor = '#a3a2a2';
 
   return (
     <Box
@@ -26,19 +27,30 @@ function Footer() {
         <Box
           sx={{
             display: 'flex',
+            flexWrap: 'wrap',
             justifyContent: 'space-between',
             alignItems: 'center',
             background: theme.text.highlight,
             height: '150px',
-            padding: '2rem',
+            padding: {
+              md: '2rem',
+              xs: '1rem',
+            },
             borderRadius: '1rem',
           }}
         >
           <Text
             sx={{
               mr: '2rem',
-              color: textColor,
-              fontSize: '2.4rem',
+              color: titleTextColor,
+              fontSize: {
+                md: '2.4rem',
+                xs: '2rem',
+              },
+              mb: {
+                md: 0,
+                xs: '0rem',
+              },
             }}
           >
             Subscribe Newsletter
@@ -53,13 +65,19 @@ function Footer() {
               fullWidth
               placeholder="Enter Your Email Address"
               sx={{
-                mr: '2rem',
-                color: textColor,
+                mr: {
+                  md: '2rem',
+                  xs: '1rem',
+                },
+                color: titleTextColor,
               }}
             />
             <Button
               sx={{
                 background: '#6485F9',
+                fontSize: '1rem',
+                width: 'max-content',
+                minWidth: 'auto',
               }}
             >
               Subscribe
@@ -70,9 +88,19 @@ function Footer() {
           container
           sx={{
             mt: '3rem',
+            '> *': {
+              mb: '2rem',
+            },
           }}
         >
-          <Grid item md={5}>
+          <Grid
+            item
+            xs={12}
+            md={5}
+            sx={{
+              mb: '2rem',
+            }}
+          >
             <Box
               sx={{
                 display: 'flex',
@@ -94,7 +122,7 @@ function Footer() {
               <Box>
                 <Text
                   sx={{
-                    color: textColor,
+                    color: titleTextColor,
                     fontSize: '1.2rem',
                     fontFamily: 'Rock Salt',
                   }}
@@ -113,10 +141,17 @@ function Footer() {
               </Box>
             </Box>
           </Grid>
-          <Grid item md={4}>
+          <Grid
+            item
+            xs={12}
+            md={4}
+            sx={{
+              mb: '2rem',
+            }}
+          >
             <Text
               sx={{
-                color: textColor,
+                color: titleTextColor,
                 fontSize: '1.1rem',
                 fontFamily: 'Rock Salt',
                 mb: '1rem',
@@ -161,10 +196,17 @@ function Footer() {
               Support Me
             </Text>
           </Grid>
-          <Grid item md={3}>
+          <Grid
+            item
+            xs={12}
+            md={3}
+            // sx={{
+            //   mb: '2rem',
+            // }}
+          >
             <Text
               sx={{
-                color: textColor,
+                color: titleTextColor,
                 fontSize: '1.1rem',
                 fontFamily: 'Rock Salt',
                 mb: '1rem',
@@ -197,6 +239,7 @@ function Footer() {
         sx={{
           background: theme.text.secondary,
           mt: '1rem',
+          opacity: 0.5,
         }}
       />
       <Text
@@ -204,6 +247,7 @@ function Footer() {
           color: theme.text.secondary,
           textAlign: 'center',
           mt: '1rem',
+          fontSize: '0.9rem',
         }}
       >
         @Copyright 2022 Andreas Sujono - All rights reserved

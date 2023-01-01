@@ -1,12 +1,9 @@
 import React, { memo } from 'react';
-import Container from 'components/common/Container';
-import Content from 'components/common/Container/Content';
 import Text from 'components/common/Text';
-import Button from 'components/common/Button';
-import Image from 'next/image';
 import { Box } from '@mui/material';
 import { useTheme } from 'hooks/common';
 import styled from '@emotion/styled';
+import CountUp from 'react-countup';
 
 const StyledTitle = styled(Text)`
   font-size: 2.5rem;
@@ -20,7 +17,10 @@ function Statistics() {
     <Box
       sx={{
         display: 'flex',
-        flexDirection: 'row',
+        flexDirection: {
+          md: 'row',
+          xs: 'column',
+        },
         justifyContent: 'center',
         alignItems: 'center',
         textAlign: 'center',
@@ -42,7 +42,9 @@ function Statistics() {
       }}
     >
       <Box>
-        <StyledTitle color={theme.text.highlight}>5+</StyledTitle>
+        <StyledTitle color={theme.text.highlight}>
+          <CountUp end={5} />+
+        </StyledTitle>
         <Text
           sx={{
             fontSize: '1.1rem',
@@ -53,7 +55,9 @@ function Statistics() {
         </Text>
       </Box>
       <Box>
-        <StyledTitle color={theme.text.highlight}>12+</StyledTitle>
+        <StyledTitle color={theme.text.highlight}>
+          <CountUp end={12} />+
+        </StyledTitle>
         <Text
           sx={{
             fontSize: '1.1rem',
@@ -64,7 +68,9 @@ function Statistics() {
         </Text>
       </Box>
       <Box>
-        <StyledTitle color={theme.text.highlight}>4.5K</StyledTitle>
+        <StyledTitle color={theme.text.highlight}>
+          <CountUp end={4580} />+
+        </StyledTitle>
         <Text
           sx={{
             fontSize: '1.1rem',
@@ -75,7 +81,9 @@ function Statistics() {
         </Text>
       </Box>
       <Box>
-        <StyledTitle color={theme.text.highlight}>78</StyledTitle>
+        <StyledTitle color={theme.text.highlight}>
+          <CountUp end={78} />
+        </StyledTitle>
 
         <Text
           sx={{

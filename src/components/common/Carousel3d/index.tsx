@@ -204,10 +204,12 @@ export default function Carousel({
               <div className={slider.class} key={index}>
                 <div className={sliderClass('left')} onClick={slideLeft}>
                   <div>
-                    <ArrowBackIcon
-                      className="fa fa-arrow-left"
-                      fontSize="large"
-                    ></ArrowBackIcon>
+                    {index === slideCurrent && (
+                      <ArrowBackIcon
+                        className="fa fa-arrow-left"
+                        fontSize="large"
+                      ></ArrowBackIcon>
+                    )}
                   </div>
                 </div>
                 <div
@@ -216,10 +218,12 @@ export default function Carousel({
                   ref={nextRef}
                 >
                   <div>
-                    <ArrowForwardIcon
-                      className="fa fa-arrow-right"
-                      fontSize="large"
-                    ></ArrowForwardIcon>
+                    {index === slideCurrent && (
+                      <ArrowForwardIcon
+                        className="fa fa-arrow-right"
+                        fontSize="large"
+                      ></ArrowForwardIcon>
+                    )}
                   </div>
                 </div>
 

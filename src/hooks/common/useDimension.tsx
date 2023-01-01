@@ -23,6 +23,7 @@ const useWindowDimensions = () => {
   useEffect(() => {
     const hasWindow = typeof window !== 'undefined';
     if (hasWindow) {
+      handleResize();
       window.addEventListener('resize', handleResize);
       return () => window.removeEventListener('resize', handleResize);
     }

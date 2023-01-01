@@ -7,19 +7,38 @@ import mainProjectImage from 'assets/home/main-project1.png';
 import mainProject2Image from 'assets/home/main-project2.png';
 import mainProject3Image from 'assets/home/main-project3.png';
 import { useTheme } from 'hooks/common';
+import useWindowDimensions from 'hooks/common/useDimension';
 
-function AboutMe() {
+function MainProjects() {
   const theme = useTheme();
+  const { width } = useWindowDimensions();
+  const isMobile = width < 900;
 
   return (
     <Box
       sx={{
-        padding: '4rem',
+        padding: {
+          md: '4rem',
+          xs: '2rem',
+        },
+        paddingY: {
+          md: '4rem',
+          xs: '3rem',
+        },
+        paddingBottom: {
+          md: '4rem',
+          xs: '4rem',
+        },
         background: theme.bg.secondary,
+        overflow: 'hidden',
       }}
     >
       <Content>
-        <Box>
+        <Box
+          sx={{
+            overflow: 'hidden',
+          }}
+        >
           <Text
             sx={{
               zIndex: 2,
@@ -36,7 +55,10 @@ function AboutMe() {
               width: '100%',
               mt: '4rem',
               position: 'relative',
-              minHeight: '62vh',
+              minHeight: {
+                md: '62vh',
+                xs: '300px',
+              },
             }}
           >
             <Image
@@ -44,7 +66,7 @@ function AboutMe() {
               alt="mainProject"
               style={{
                 width: 'auto',
-                maxWidth: '40vw',
+                maxWidth: isMobile ? '60vw' : '40vw',
                 height: 'auto',
                 objectFit: 'cover',
                 position: 'absolute',
@@ -57,7 +79,7 @@ function AboutMe() {
               alt="mainProject"
               style={{
                 width: 'auto',
-                maxWidth: '36vw',
+                maxWidth: isMobile ? '50vw' : '36vw',
                 height: 'auto',
                 objectFit: 'cover',
                 position: 'absolute',
@@ -70,7 +92,7 @@ function AboutMe() {
               alt="mainProject"
               style={{
                 width: 'auto',
-                maxWidth: '30vw',
+                maxWidth: isMobile ? '60vw' : '30vw',
                 height: 'auto',
                 objectFit: 'cover',
                 position: 'absolute',
@@ -85,4 +107,4 @@ function AboutMe() {
   );
 }
 
-export default memo(AboutMe);
+export default memo(MainProjects);

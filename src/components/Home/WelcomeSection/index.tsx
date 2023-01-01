@@ -5,7 +5,6 @@ import Fade from 'react-reveal/Fade';
 import Container from 'components/common/Container';
 import Content from 'components/common/Container/Content';
 import Text from 'components/common/Text';
-import Button from 'components/common/Button';
 import Image from 'next/image';
 // import resumePDF from 'assets/Andreas_Resume.pdf'
 import bgImage from 'assets/home/welcome-bg.svg';
@@ -14,10 +13,13 @@ import decoratorImage from 'assets/home/welcome-img.png';
 import avatarImage from 'assets/home/avatar.png';
 import { Box, FormControlLabel, Switch } from '@mui/material';
 import { useTheme } from 'hooks/common';
+import useWindowDimensions from 'hooks/common/useDimension';
 // import SocialMedia from './SocialMedia'
 
 function WelcomeSection() {
   const theme = useTheme();
+  const { width } = useWindowDimensions();
+  const isMobile = width < 900;
   const welcomeBgImage = theme.theme === 'light' ? bgImage : bgDarkImage;
 
   return (
@@ -35,7 +37,10 @@ function WelcomeSection() {
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
-            height: '65vh',
+            height: {
+              xs: '50vh',
+              md: '65vh',
+            },
             textAlign: 'center',
             position: 'relative',
             zIndex: 2,
@@ -51,7 +56,10 @@ function WelcomeSection() {
               <Text
                 variant="h1"
                 sx={{
-                  fontSize: '4rem',
+                  fontSize: {
+                    md: '4rem',
+                    xs: '3rem',
+                  },
                   color: 'white',
                   fontFamily: 'Rock Salt',
                 }}
@@ -62,7 +70,10 @@ function WelcomeSection() {
             <Text
               variant="h2"
               sx={{
-                fontSize: '2rem',
+                fontSize: {
+                  md: '2rem',
+                  xs: '1.5rem',
+                },
                 color: 'white',
                 textShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
                 mt: 3,
@@ -102,11 +113,11 @@ function WelcomeSection() {
         <Image
           src={welcomeBgImage}
           style={{
-            width: '120%',
+            width: isMobile ? '150%' : '120%',
             maxHeight: '100vh',
             position: 'absolute',
-            top: '-5%',
-            left: '-15%',
+            top: isMobile ? '-25%' : '-5%',
+            left: isMobile ? '-35%' : '-15%',
           }}
           alt=""
         />
@@ -114,17 +125,27 @@ function WelcomeSection() {
           sx={{
             position: 'absolute',
             top: '2%',
-            left: '10%',
+            left: {
+              md: '10%',
+              xs: '1.5rem',
+            },
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            width: '80%',
+            width: {
+              md: '80%',
+              xs: '94%',
+            },
+            zIndex: 8,
           }}
         >
           <Image
             src={avatarImage}
             style={{
-              width: '100px',
+              width: '14%',
+              minWidth: '60px',
+              maxWidth: '100px',
+              height: 'auto',
               maxHeight: '70px',
               objectFit: 'cover',
             }}
@@ -148,10 +169,13 @@ function WelcomeSection() {
       <Image
         src={decoratorImage}
         style={{
-          width: '380px',
+          width: '30%',
+          height: 'auto',
+          minWidth: '120px',
+          maxWidth: '380px',
           maxHeight: '460px',
           position: 'absolute',
-          bottom: '24%',
+          bottom: isMobile ? '44%' : '24%',
           right: '2%',
         }}
         alt=""

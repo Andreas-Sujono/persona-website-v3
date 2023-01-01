@@ -5,9 +5,12 @@ import Image from 'next/image';
 import { Box } from '@mui/material';
 import { useTheme } from 'hooks/common';
 import bgImage from 'assets/home/join-class.png';
+import useWindowDimensions from 'hooks/common/useDimension';
 
 function JoinClass() {
   const theme = useTheme();
+  const { width } = useWindowDimensions();
+  const isMobile = width < 800;
   return (
     <Box
       sx={{
@@ -19,18 +22,20 @@ function JoinClass() {
         background: theme.bg.secondary,
         // boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
         borderRadius: '1rem',
-        padding: '0.5rem 1.5rem',
+        padding: '1rem 1.5rem',
         margin: 'auto',
         width: '100%',
         mt: 10,
         mb: 5,
         border: `1px solid ${theme.text.highlight}`,
+        position: 'relative',
       }}
     >
       <Box
         sx={{
           position: 'relative',
           pb: '1rem',
+          zIndex: 3,
         }}
       >
         <Text
@@ -57,7 +62,10 @@ function JoinClass() {
         <Button
           sx={{
             position: 'absolute',
-            bottom: '-42px',
+            bottom: {
+              md: '-42px',
+              xs: '-36px',
+            },
             left: 0,
             background: theme.bg.gradient,
           }}
@@ -65,13 +73,24 @@ function JoinClass() {
           Join Class
         </Button>
       </Box>
-      <Box>
+      <Box
+        sx={{
+          position: 'relative',
+        }}
+      >
         <Image
           src={bgImage}
           alt=""
           style={{
             width: 'auto',
+            height: 'auto',
             maxHeight: '160px',
+            display: isMobile ? 'block' : 'block',
+            position: isMobile ? 'absolute' : 'relative',
+            bottom: '-74px',
+            right: 0,
+            zIndex: 1,
+            opacity: isMobile ? 0.5 : 1,
           }}
         />
       </Box>

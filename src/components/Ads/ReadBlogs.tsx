@@ -23,7 +23,6 @@ function ReadBlogs() {
         borderRadius: '1rem',
         padding: '2rem 1.5rem',
         paddingBottom: '2.5em',
-        margin: 'auto',
         border: `1px solid ${theme.text.highlight}`,
         position: 'relative',
       }}

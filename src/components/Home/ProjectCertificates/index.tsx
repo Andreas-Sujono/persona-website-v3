@@ -7,9 +7,12 @@ import Carousel3d from 'components/common/Carousel3d';
 import data from './data';
 import { useTheme } from 'hooks/common';
 import Content from 'components/common/Container/Content';
+import useWindowDimensions from 'hooks/common/useDimension';
 
 function ProjectCertificates() {
   const theme = useTheme();
+  const { width } = useWindowDimensions();
+  const isMobile = width < 1000;
 
   const slides = React.useMemo(
     () =>
@@ -19,21 +22,27 @@ function ProjectCertificates() {
           alt=""
           key={Math.random()}
           className="certificate-image"
-          width={500}
-          height={360}
+          width={isMobile ? 300 : 500}
+          height={isMobile ? 180 : 360}
           style={{
             objectFit: 'cover',
+            height: 'auto',
+            maxHeight: isMobile ? 180 : 360,
           }}
         />
       )),
-    []
+    [isMobile]
   );
 
   return (
     <Box
       sx={{
         position: 'relative',
-        minHeight: '480px',
+        minHeight: {
+          md: '480px',
+          xs: '380px',
+        },
+        overflow: 'hidden',
       }}
     >
       <Image
@@ -60,7 +69,10 @@ function ProjectCertificates() {
               overflow: 'hidden',
               position: 'relative',
               zIndex: 5,
-              top: '180px',
+              top: {
+                md: '180px',
+                xs: '24px',
+              },
               width: 'max-content',
             }}
           >
@@ -69,7 +81,15 @@ function ProjectCertificates() {
           <Box
             sx={{
               position: 'relative',
-              left: '150px',
+              width: '90%',
+              left: {
+                md: '150px',
+                xs: '16px',
+              },
+              top: {
+                md: '0',
+                xs: '60px',
+              },
             }}
           >
             <Carousel3d slides={slides} autoplay interval={3000} arrows />

@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 
 const ContentSecurityPolicy = `
-  default-src 'self' https://res.cloudinary.com;
+  default-src 'self' https://res.cloudinary.com https://www.google-analytics.com;
   script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com;
   child-src 'self';
   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/css2 https://fonts.gstatic.com;

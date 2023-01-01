@@ -21,10 +21,10 @@ As a software engineer, I love to solve real problem by making things that chang
 
 **Talking about Personal Stuffs:**
 
-- 👨🏻‍💻 I’m currently studying at Nanyang Technological University (NTU);
-- 🚀 I’m currently learning Data Structures and Algorithms on leetcode;
-- 💬 Ask me about anything, I am happy to help;
+- 👨🏻‍💻 I’m currently Working as Full stack developer + Blockchain Developer at one of the leading DeFi Company.
+- 🚀 I’m actively solving Data Structures and Algorithm problems on leetcode;
 - 📝 I regulary write articles on [medium](https://andreassujono.medium.com);
+- 💬 Ask me about anything, I am happy to help;
 - 📫 How to reach me: andr0075@e.ntu.edu.sg;
 - 📝 [Resume](https://andreassujono.com/static/media/Andreas_Resume.9bd97b03.pdf).
 
@@ -49,7 +49,6 @@ As a software engineer, I love to solve real problem by making things that chang
 
 
 ## Pending
-- react counter up
 - responsiveness
 - nav scroll track
 - side project

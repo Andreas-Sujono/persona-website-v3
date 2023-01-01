@@ -13,7 +13,7 @@ const Button = ({ children, variant, color, ...props }: Props) => {
         // background: color || theme.text.highlight,
         borderRadius: '1rem',
         padding: '6px 24px',
-        minWidth: '160px',
+        // minWidth: '160px',
       }}
       variant={variant || 'contained'}
       {...props}

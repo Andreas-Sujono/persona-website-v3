@@ -6,9 +6,13 @@ import { Box } from '@mui/material';
 import { useTheme } from 'hooks/common';
 import bgImage from 'assets/home/join-class.png';
 import TextInput from 'components/common/Form/TextInput';
+import useWindowDimensions from 'hooks/common/useDimension';
 
 function JoinNewsletter() {
   const theme = useTheme();
+  const { width } = useWindowDimensions();
+  const isMobile = width < 800;
+
   return (
     <Box
       sx={{
@@ -20,19 +24,25 @@ function JoinNewsletter() {
         background: theme.bg.secondary,
         // boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
         borderRadius: '1rem',
-        padding: '1rem 1.5rem',
-        paddingBottom: '1rem',
+        padding: '1.2rem 1.5rem',
+        paddingBottom: '1.2rem',
         margin: 'auto',
-        width: '100%',
-        mt: 10,
+        width: '90%',
+        mt: {
+          md: 10,
+          xs: 2,
+        },
         mb: 5,
         border: `1px solid ${theme.text.highlight}`,
+        position: 'relative',
       }}
     >
       <Box
         sx={{
           position: 'relative',
           pb: '1rem',
+          zIndex: 3,
+          width: '100%',
         }}
       >
         <Text
@@ -68,7 +78,10 @@ function JoinNewsletter() {
         <Button
           sx={{
             position: 'absolute',
-            bottom: '-42px',
+            bottom: {
+              md: '-42px',
+              xs: '-36px',
+            },
             left: 0,
             background: theme.bg.gradient,
           }}
@@ -76,13 +89,24 @@ function JoinNewsletter() {
           Join Newsletter
         </Button>
       </Box>
-      <Box>
+      <Box
+        sx={{
+          position: 'relative',
+        }}
+      >
         <Image
           src={bgImage}
           alt=""
           style={{
             width: 'auto',
             maxHeight: '160px',
+            height: 'auto',
+            display: isMobile ? 'block' : 'block',
+            position: isMobile ? 'absolute' : 'relative',
+            bottom: '-74px',
+            right: 0,
+            zIndex: 1,
+            opacity: isMobile ? 0.3 : 1,
           }}
         />
       </Box>
