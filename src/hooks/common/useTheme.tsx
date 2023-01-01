@@ -1,4 +1,4 @@
-import React, { useContext, useMemo, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 import {
   createTheme,
   ThemeProvider as MUIThemeProvider,
@@ -188,12 +188,21 @@ export const ThemeProvider = ({ children }: { children: JSX.Element }) => {
       switchTheme: () => {
         if (themeValue.theme === 'light') {
           setLocalTheme(darkTheme);
+          localStorage.setItem('theme', 'dark');
         } else {
           setLocalTheme(lightTheme);
+          localStorage.setItem('theme', 'light');
         }
       },
     };
   }, [localTheme]);
+
+  useEffect(() => {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark') {
+      themeValue.switchTheme();
+    }
+  }, []);
 
   return (
     <MUIThemeProvider theme={muiTheme}>

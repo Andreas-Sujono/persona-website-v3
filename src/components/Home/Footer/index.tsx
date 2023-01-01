@@ -10,6 +10,7 @@ import avatarImage from 'assets/home/avatar.png';
 
 function Footer() {
   const theme = useTheme();
+  const textColor = 'white';
 
   return (
     <Box
@@ -18,7 +19,7 @@ function Footer() {
         paddingY: '3rem',
         paddingBottom: '1rem',
         mt: '4rem',
-        color: 'white',
+        color: textColor,
       }}
     >
       <Content>
@@ -36,7 +37,7 @@ function Footer() {
           <Text
             sx={{
               mr: '2rem',
-              color: 'white',
+              color: textColor,
               fontSize: '2.4rem',
             }}
           >
@@ -53,7 +54,7 @@ function Footer() {
               placeholder="Enter Your Email Address"
               sx={{
                 mr: '2rem',
-                color: 'white',
+                color: textColor,
               }}
             />
             <Button
@@ -93,7 +94,7 @@ function Footer() {
               <Box>
                 <Text
                   sx={{
-                    color: 'white',
+                    color: textColor,
                     fontSize: '1.2rem',
                     fontFamily: 'Rock Salt',
                   }}
@@ -104,6 +105,7 @@ function Footer() {
                   sx={{
                     color: '#a9a5a5',
                     fontSize: '1rem',
+                    mt: '0.2rem',
                   }}
                 >
                   Full Stack Developer
@@ -114,7 +116,7 @@ function Footer() {
           <Grid item md={4}>
             <Text
               sx={{
-                color: 'white',
+                color: textColor,
                 fontSize: '1.1rem',
                 fontFamily: 'Rock Salt',
                 mb: '1rem',
@@ -126,7 +128,7 @@ function Footer() {
               sx={{
                 fontSize: '1rem',
                 mb: '0.5rem',
-                color: 'white',
+                color: textColor,
               }}
             >
               About Me
@@ -135,7 +137,7 @@ function Footer() {
               sx={{
                 fontSize: '1rem',
                 mb: '0.5rem',
-                color: 'white',
+                color: textColor,
               }}
             >
               Blogs
@@ -144,7 +146,7 @@ function Footer() {
               sx={{
                 fontSize: '1rem',
                 mb: '0.5rem',
-                color: 'white',
+                color: textColor,
               }}
             >
               Join Community
@@ -153,7 +155,7 @@ function Footer() {
               sx={{
                 fontSize: '1rem',
                 mb: '0.5rem',
-                color: 'white',
+                color: textColor,
               }}
             >
               Support Me
@@ -162,7 +164,7 @@ function Footer() {
           <Grid item md={3}>
             <Text
               sx={{
-                color: 'white',
+                color: textColor,
                 fontSize: '1.1rem',
                 fontFamily: 'Rock Salt',
                 mb: '1rem',
@@ -174,7 +176,7 @@ function Footer() {
               sx={{
                 fontSize: '1rem',
                 mb: '0.5rem',
-                color: 'white',
+                color: textColor,
               }}
             >
               andreassujono@gmail.com
@@ -183,7 +185,7 @@ function Footer() {
               sx={{
                 fontSize: '1rem',
                 mb: '0.5rem',
-                color: 'white',
+                color: textColor,
               }}
             >
               +6583066172
