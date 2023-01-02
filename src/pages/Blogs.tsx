@@ -1,13 +1,19 @@
 import Head from 'next/head';
-import BlogsComponent from 'components/Blogs';
+import BlogsComponent, {
+  getStaticProps as _getStaticProps,
+} from 'components/Blogs';
 
-export default function Blogs() {
+export default function Blogs(props: any) {
   return (
     <>
       <Head>
         <title>Andreas Sujono Blogs - Learn Up to Date technology news</title>
       </Head>
-      <BlogsComponent />
+      <BlogsComponent {...props} />
     </>
   );
+}
+
+export async function getStaticProps() {
+  return _getStaticProps();
 }

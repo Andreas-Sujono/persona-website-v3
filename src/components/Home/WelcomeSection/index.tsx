@@ -115,9 +115,9 @@ function WelcomeSection() {
           style={{
             width: isMobile ? '280%' : '120%',
             height: 'auto',
-            maxHeight: '100vh',
+            maxHeight: isMobile ? '100vh' : '80vh',
             position: 'absolute',
-            top: isMobile ? '-5%' : '-5%',
+            top: isMobile ? '-5%' : '-25%',
             left: isMobile ? '-35%' : '-15%',
           }}
           priority

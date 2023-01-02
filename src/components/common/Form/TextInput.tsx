@@ -1,7 +1,7 @@
 import TextField, { TextFieldProps } from '@mui/material/TextField';
 import { useTheme } from 'hooks/common';
 
-export default function TextInput({ ...props }: TextFieldProps) {
+export default function TextInput({ InputProps, ...props }: TextFieldProps) {
   const theme = useTheme();
   return (
     <TextField
@@ -26,6 +26,7 @@ export default function TextInput({ ...props }: TextFieldProps) {
             borderRadius: '1rem',
           },
         },
+        startAdornment: InputProps?.startAdornment,
       }}
       {...props}
     />

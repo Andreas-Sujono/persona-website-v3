@@ -6,6 +6,7 @@ import { Box, Divider, FormControlLabel, Grid, Switch } from '@mui/material';
 import { useTheme } from 'hooks/common';
 import useWindowDimensions from 'hooks/common/useDimension';
 import MenuIcon from '@mui/icons-material/Menu';
+import { useRouter } from 'next/router';
 
 const navbarItems = [
   {
@@ -94,6 +95,7 @@ function NavBar() {
   const containerRef = useRef<any>(null);
   const { width } = useWindowDimensions();
   const isMobile = width < 700;
+  const { push } = useRouter();
 
   useEffect(() => {
     if (containerRef.current) setOffsetTop(containerRef.current.offsetTop || 0);
@@ -101,10 +103,10 @@ function NavBar() {
 
   useEffect(() => {
     const fn = () => {
-      if (window.scrollY < offsetTop - 500) {
+      if (window.scrollY < offsetTop - 100) {
         setIsNavOpen(false);
         setIsSticky(true);
-      } else if (window.scrollY > offsetTop) {
+      } else if (window.scrollY > offsetTop - 100) {
         setIsSticky(false);
       }
     };
@@ -153,7 +155,7 @@ function NavBar() {
         </Grid>
         {!isMobile &&
           navbarItems.map((item, idx) => (
-            <Grid item key={item.label} sx={{}}>
+            <Grid item key={item.label} sx={{}} onClick={() => push(item.path)}>
               <Text
                 sx={{
                   fontSize: '0.9rem',
@@ -185,7 +187,7 @@ function NavBar() {
             }}
             onChange={theme.switchTheme}
           />
-          {isMobile && (
+          {isMobile && !isSticky && (
             <MenuIcon
               sx={{
                 color: theme.text.primary,
