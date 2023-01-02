@@ -5,6 +5,7 @@ import Text from 'components/common/Text';
 import { useTheme } from 'hooks/common';
 import Image from 'next/image';
 import { Article } from '..';
+import moment from 'moment';
 
 interface Props {
   article: Article;
@@ -30,7 +31,7 @@ function BlogCard({ article, mt, mb }: Props) {
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        alignItems: 'center',
+        alignItems: 'stretch',
         border: `1px solid #e1e0e05f`,
         borderRadius: '1rem',
         '& .medium-feed-image, & .medium-feed-link': {
@@ -59,6 +60,7 @@ function BlogCard({ article, mt, mb }: Props) {
             color: theme.text.secondary,
             fontSize: '0.95rem',
             mt: 0.5,
+            minHeight: '42px',
           }}
         >
           {isMounted && <Markup content={parsedDesc} />}{' '}
@@ -77,7 +79,8 @@ function BlogCard({ article, mt, mb }: Props) {
               fontSize: '0.8rem',
             }}
           >
-            Posted 1 Month ago
+            Posted{' '}
+            {moment.duration(-moment().diff(article.pubDate)).humanize(true)}
           </Text>
           <Text
             sx={{
@@ -89,7 +92,7 @@ function BlogCard({ article, mt, mb }: Props) {
           </Text>
         </Box>
       </Box>
-      <Box sx={{ height: '100%' }}>
+      <Box sx={{}}>
         <Image
           src={article.thumbnail}
           width={400}
@@ -97,10 +100,10 @@ function BlogCard({ article, mt, mb }: Props) {
           style={{
             width: '120px',
             height: '100%',
-            minHeight: '142px',
+            minHeight: '136px',
             maxHeight: '300px',
             objectFit: 'cover',
-            borderRadius: '0.6rem',
+            borderRadius: '0 0.6rem 0.6rem 0',
           }}
           alt=""
         />

@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, useState, useRef } from 'react';
 import Text from 'components/common/Text';
 import Image from 'next/image';
 import { Box, Grid } from '@mui/material';
@@ -10,6 +10,7 @@ import SideCard from './BlogCard/SideCard';
 import SearchBar from 'components/common/Form/SearchBar';
 import BlogCard from './BlogCard/CardV2';
 import axios from 'axios';
+import JoinMedium from 'components/Ads/JoinMedium';
 
 export interface Article {
   title: string;
@@ -22,11 +23,28 @@ export interface Article {
 
 function BlogsPage({ articles }: { articles: Article[] }) {
   const theme = useTheme();
-  console.log('articles: ', articles);
+  const [searchInput, setSearchInput] = useState('');
+  const [searchRes, setSearchRes] = useState(articles || []);
+  const searchRef = useRef<any>(null);
+
+  // console.log('articles: ', articles);
   const mainArticle = articles[0];
   const sideArticle1 = articles[1];
   const sideArticle2 = articles[2];
-  const allArticles = articles;
+  const allArticles = searchRes;
+
+  const onSearch = (value: string) => {
+    setSearchInput(value);
+    if (searchRef.current) {
+      clearTimeout(searchRef.current);
+    }
+    searchRef.current = setTimeout(() => {
+      const regex = new RegExp(value, 'ig');
+      // console.log(articles.filter((item) => item.title.match(regex)));
+      setSearchRes(articles.filter((item) => item.title.match(regex)));
+      searchRef.current = null;
+    }, 100);
+  };
 
   return (
     <Box>
@@ -34,7 +52,7 @@ function BlogsPage({ articles }: { articles: Article[] }) {
       <Box
         sx={{
           width: '100%',
-          height: '20vw',
+          height: '30vw',
           position: 'absolute',
           background: theme.bg.secondary,
         }}
@@ -56,7 +74,11 @@ function BlogsPage({ articles }: { articles: Article[] }) {
         </Grid>
         <Grid container sx={{ mt: 3 }} spacing={1}>
           <Grid item xs={12} md={6.5} sx={{}}>
-            <SearchBar fullWidth placeholder="Search blogs" />
+            <SearchBar
+              fullWidth
+              placeholder="Search blogs"
+              onChange={(e) => onSearch(e.target.value)}
+            />
             {allArticles.map((article: Article, idx: number) => (
               <BlogCard
                 mt={idx === 0 ? 4 : 0}
@@ -66,7 +88,19 @@ function BlogsPage({ articles }: { articles: Article[] }) {
               />
             ))}
           </Grid>
-          <Grid item xs={12} md={5.5}></Grid>
+          <Grid
+            item
+            xs={12}
+            md={5}
+            sx={{
+              ml: {
+                md: '3rem',
+                xs: 0,
+              },
+            }}
+          >
+            <JoinMedium />
+          </Grid>
         </Grid>
       </Content>
     </Box>

@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { Box } from '@mui/material';
 import { useTheme } from 'hooks/common';
 import { Article } from '..';
+import moment from 'moment';
 
 interface Props {
   article: Article;
@@ -48,7 +49,8 @@ export default function MainCard({ article }: Props) {
               color: theme.text.secondary,
             }}
           >
-            Posted 1 Month ago
+            Posted{' '}
+            {moment.duration(-moment().diff(article.pubDate)).humanize(true)}
           </Text>
           <Text
             sx={{
