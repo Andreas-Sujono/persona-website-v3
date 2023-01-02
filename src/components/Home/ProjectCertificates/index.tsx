@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import Text from 'components/common/Text';
 import Image from 'next/image';
-import bgImage from 'assets/home/side-project-bg.png';
+import bgImage from 'assets/home/side-project-bg.webp';
 import { Box, Grid } from '@mui/material';
 import Carousel3d from 'components/common/Carousel3d';
 import data from './data';

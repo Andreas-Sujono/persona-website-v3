@@ -3,9 +3,9 @@ import Text from 'components/common/Text';
 import Image from 'next/image';
 import { Box, Grid } from '@mui/material';
 import Content from 'components/common/Container/Content';
-import mainProjectImage from 'assets/home/main-project1.png';
-import mainProject2Image from 'assets/home/main-project2.png';
-import mainProject3Image from 'assets/home/main-project3.png';
+import mainProjectImage from 'assets/home/main-project1.webp';
+import mainProject2Image from 'assets/home/main-project2.webp';
+import mainProject3Image from 'assets/home/main-project3.webp';
 import { useTheme } from 'hooks/common';
 import useWindowDimensions from 'hooks/common/useDimension';
 

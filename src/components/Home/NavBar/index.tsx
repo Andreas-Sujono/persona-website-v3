@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import Text from 'components/common/Text';
 import Image from 'next/image';
-import avatarImage from 'assets/home/avatar.png';
+import avatarImage from 'assets/home/avatar.webp';
 import { Box, FormControlLabel, Grid, Switch } from '@mui/material';
 import { useTheme } from 'hooks/common';
 

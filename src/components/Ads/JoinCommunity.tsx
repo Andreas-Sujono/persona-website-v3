@@ -4,7 +4,7 @@ import Button from 'components/common/Button';
 import Image from 'next/image';
 import { Box } from '@mui/material';
 import { useTheme } from 'hooks/common';
-import bgImage from 'assets/home/join-community.png';
+import bgImage from 'assets/home/join-community.webp';
 
 function JoinCommunity() {
   const theme = useTheme();

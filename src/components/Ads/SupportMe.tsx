@@ -4,7 +4,7 @@ import Button from 'components/common/Button';
 import Image from 'next/image';
 import { Box } from '@mui/material';
 import { useTheme } from 'hooks/common';
-import bgImage from 'assets/home/support-me.png';
+import bgImage from 'assets/home/support-me.webp';
 
 function SupportMe() {
   const theme = useTheme();

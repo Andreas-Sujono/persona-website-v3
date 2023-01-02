@@ -3,9 +3,9 @@ import Text from 'components/common/Text';
 import Image from 'next/image';
 import { Box, Grid } from '@mui/material';
 import Content from 'components/common/Container/Content';
-import bgImage from 'assets/home/about-me-bg.png';
-import profileImage from 'assets/home/profile.png';
-import experienceImage from 'assets/home/experience.png';
+import bgImage from 'assets/home/about-me-bg.webp';
+import profileImage from 'assets/home/profile.webp';
+import experienceImage from 'assets/home/experience.webp';
 import {
   Radar,
   RadarChart,

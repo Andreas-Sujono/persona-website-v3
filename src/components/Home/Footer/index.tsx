@@ -6,7 +6,7 @@ import Content from 'components/common/Container/Content';
 import TextInput from 'components/common/Form/TextInput';
 import Button from 'components/common/Button';
 import { useTheme } from 'hooks/common';
-import avatarImage from 'assets/home/avatar.png';
+import avatarImage from 'assets/home/avatar.webp';
 
 function Footer() {
   const theme = useTheme();

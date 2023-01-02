@@ -9,8 +9,8 @@ import Image from 'next/image';
 // import resumePDF from 'assets/Andreas_Resume.pdf'
 import bgImage from 'assets/home/welcome-bg.svg';
 import bgDarkImage from 'assets/home/welcome-bg-dark.svg';
-import decoratorImage from 'assets/home/welcome-img.png';
-import avatarImage from 'assets/home/avatar.png';
+import decoratorImage from 'assets/home/welcome-img.webp';
+import avatarImage from 'assets/home/avatar.webp';
 import { Box, FormControlLabel, Switch } from '@mui/material';
 import { useTheme } from 'hooks/common';
 import useWindowDimensions from 'hooks/common/useDimension';
@@ -114,11 +114,13 @@ function WelcomeSection() {
           src={welcomeBgImage}
           style={{
             width: isMobile ? '150%' : '120%',
+            height: 'auto',
             maxHeight: '100vh',
             position: 'absolute',
             top: isMobile ? '-25%' : '-5%',
             left: isMobile ? '-35%' : '-15%',
           }}
+          priority
           alt=""
         />
         <Box
@@ -178,6 +180,7 @@ function WelcomeSection() {
           bottom: isMobile ? '44%' : '24%',
           right: '2%',
         }}
+        priority
         alt=""
       />
     </>
