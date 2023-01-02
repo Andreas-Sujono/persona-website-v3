@@ -103,8 +103,8 @@ function JoinNewsletter() {
             height: 'auto',
             display: isMobile ? 'block' : 'block',
             position: isMobile ? 'absolute' : 'relative',
-            bottom: isMobile ? '-72px' : '-12px',
-            right: 0,
+            bottom: isMobile ? '-90px' : '-12px',
+            right: isMobile ? '-32px' : '0',
             zIndex: 1,
             opacity: isMobile ? 0.3 : 1,
           }}

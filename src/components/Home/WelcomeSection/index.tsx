@@ -113,11 +113,11 @@ function WelcomeSection() {
         <Image
           src={welcomeBgImage}
           style={{
-            width: isMobile ? '150%' : '120%',
+            width: isMobile ? '280%' : '120%',
             height: 'auto',
             maxHeight: '100vh',
             position: 'absolute',
-            top: isMobile ? '-25%' : '-5%',
+            top: isMobile ? '-5%' : '-5%',
             left: isMobile ? '-35%' : '-15%',
           }}
           priority

@@ -8,6 +8,7 @@ import mainProject2Image from 'assets/home/main-project2.webp';
 import mainProject3Image from 'assets/home/main-project3.webp';
 import { useTheme } from 'hooks/common';
 import useWindowDimensions from 'hooks/common/useDimension';
+import Fade from 'react-reveal/Fade';
 
 function MainProjects() {
   const theme = useTheme();
@@ -33,76 +34,78 @@ function MainProjects() {
         overflow: 'hidden',
       }}
     >
-      <Content>
-        <Box
-          sx={{
-            overflow: 'hidden',
-          }}
-        >
-          <Text
-            sx={{
-              zIndex: 2,
-              fontSize: '2rem',
-              color: theme.text.highlight,
-              fontFamily: 'Rock Salt',
-              whiteSpace: 'nowrap',
-            }}
-          >
-            Main Projects
-          </Text>
+      <Fade>
+        <Content>
           <Box
             sx={{
-              width: '100%',
-              mt: '4rem',
-              position: 'relative',
-              minHeight: {
-                md: '62vh',
-                xs: '300px',
-              },
+              overflow: 'hidden',
             }}
           >
-            <Image
-              src={mainProjectImage}
-              alt="mainProject"
-              style={{
-                width: 'auto',
-                maxWidth: isMobile ? '60vw' : '40vw',
-                height: 'auto',
-                objectFit: 'cover',
-                position: 'absolute',
-                top: 0,
-                left: 0,
+            <Text
+              sx={{
+                zIndex: 2,
+                fontSize: '2rem',
+                color: theme.text.highlight,
+                fontFamily: 'Rock Salt',
+                whiteSpace: 'nowrap',
               }}
-            />
-            <Image
-              src={mainProject2Image}
-              alt="mainProject"
-              style={{
-                width: 'auto',
-                maxWidth: isMobile ? '50vw' : '36vw',
-                height: 'auto',
-                objectFit: 'cover',
-                position: 'absolute',
-                top: '20%',
-                left: '40%',
+            >
+              Main Projects
+            </Text>
+            <Box
+              sx={{
+                width: '100%',
+                mt: '4rem',
+                position: 'relative',
+                minHeight: {
+                  md: '62vh',
+                  xs: '300px',
+                },
               }}
-            />
-            <Image
-              src={mainProject3Image}
-              alt="mainProject"
-              style={{
-                width: 'auto',
-                maxWidth: isMobile ? '60vw' : '30vw',
-                height: 'auto',
-                objectFit: 'cover',
-                position: 'absolute',
-                top: '40%',
-                left: '10%',
-              }}
-            />
+            >
+              <Image
+                src={mainProjectImage}
+                alt="mainProject"
+                style={{
+                  width: 'auto',
+                  maxWidth: isMobile ? '60vw' : '40vw',
+                  height: 'auto',
+                  objectFit: 'cover',
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                }}
+              />
+              <Image
+                src={mainProject2Image}
+                alt="mainProject"
+                style={{
+                  width: 'auto',
+                  maxWidth: isMobile ? '50vw' : '36vw',
+                  height: 'auto',
+                  objectFit: 'cover',
+                  position: 'absolute',
+                  top: '20%',
+                  left: '40%',
+                }}
+              />
+              <Image
+                src={mainProject3Image}
+                alt="mainProject"
+                style={{
+                  width: 'auto',
+                  maxWidth: isMobile ? '60vw' : '30vw',
+                  height: 'auto',
+                  objectFit: 'cover',
+                  position: 'absolute',
+                  top: '40%',
+                  left: '10%',
+                }}
+              />
+            </Box>
           </Box>
-        </Box>
-      </Content>
+        </Content>
+      </Fade>
     </Box>
   );
 }

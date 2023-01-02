@@ -15,6 +15,7 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 import useWindowDimensions from 'hooks/common/useDimension';
+import Fade from 'react-reveal/Fade';
 
 const data = [
   {
@@ -79,118 +80,122 @@ function AboutMe() {
               },
             }}
           >
-            <Grid
-              container
-              justifyContent={{
-                md: 'flex-start',
-                xs: 'center',
-              }}
-            >
-              <Grid item md={4}>
-                <Box>
-                  <Image
-                    src={profileImage}
-                    alt=""
-                    style={{
-                      width: '100%',
-                      maxWidth: '230px',
-                      height: 'auto',
-                      maxHeight: '230px',
-                      objectFit: 'cover',
-                      zIndex: 1,
+            <Fade>
+              <Grid
+                container
+                justifyContent={{
+                  md: 'flex-start',
+                  xs: 'center',
+                }}
+              >
+                <Grid item md={4}>
+                  <Box>
+                    <Image
+                      src={profileImage}
+                      alt=""
+                      style={{
+                        width: '100%',
+                        maxWidth: '230px',
+                        height: 'auto',
+                        maxHeight: '230px',
+                        objectFit: 'cover',
+                        zIndex: 1,
+                        margin: 'auto',
+                        display: 'block',
+                      }}
+                    />
+                  </Box>
+                </Grid>
+                <Grid item md={6}>
+                  <Text
+                    sx={{
+                      fontSize: '1.15rem',
+                      lineHeight: '2rem',
                       margin: 'auto',
                       display: 'block',
+                      ml: '2rem',
+                      mt: {
+                        md: '0',
+                        xs: '1rem',
+                      },
                     }}
-                  />
-                </Box>
+                  >
+                    Andreas is a passionate and tech enthusiast with 5+ years of
+                    working experience in more than 7 different companies with
+                    diverse industries such as robotics, ed-tech, gaming,
+                    blockchain, data, and cybersecurity company. He has
+                    expertise in Frontend, Backend, Cloud Architect, Devops, and
+                    Blockchain development
+                  </Text>
+                </Grid>
               </Grid>
-              <Grid item md={6}>
-                <Text
+            </Fade>
+            <Fade>
+              <Grid
+                container
+                sx={{
+                  mt: {
+                    md: '5rem',
+                    xs: '2rem',
+                  },
+                }}
+              >
+                <Grid
+                  item
+                  xs={12}
+                  md={6}
                   sx={{
-                    fontSize: '1.15rem',
-                    lineHeight: '2rem',
-                    margin: 'auto',
-                    display: 'block',
-                    ml: '2rem',
-                    mt: {
+                    paddingX: {
                       md: '0',
+                      xs: '2rem',
+                    },
+                  }}
+                >
+                  <ResponsiveContainer width="100%" height="100%">
+                    <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
+                      <PolarGrid />
+                      <PolarAngleAxis dataKey="subject" />
+                      <PolarRadiusAxis />
+                      <Radar
+                        name="Mike"
+                        dataKey="A"
+                        stroke="#e21a6dd2"
+                        fill="#e21a6dd2"
+                        fillOpacity={0.6}
+                      />
+                    </RadarChart>
+                  </ResponsiveContainer>
+                </Grid>
+                <Grid
+                  item
+                  xs={12}
+                  md={6}
+                  sx={{
+                    paddingX: {
+                      md: '0',
+                      xs: '2rem',
+                    },
+                    mt: {
+                      md: 0,
                       xs: '1rem',
                     },
                   }}
                 >
-                  Andreas is a passionate and tech enthusiast with 5+ years of
-                  working experience in more than 7 different companies with
-                  diverse industries such as robotics, ed-tech, gaming,
-                  blockchain, data, and cybersecurity company. He has expertise
-                  in Frontend, Backend, Cloud Architect, Devops, and Blockchain
-                  development
-                </Text>
+                  <Image
+                    src={experienceImage}
+                    alt=""
+                    style={{
+                      width: '100%',
+                      maxWidth: '360px',
+                      height: 'auto',
+                      objectFit: 'cover',
+                      zIndex: 1,
+                      display: 'block',
+                    }}
+                  />
+                </Grid>
               </Grid>
-            </Grid>
-            <Grid
-              container
-              sx={{
-                mt: {
-                  md: '5rem',
-                  xs: '2rem',
-                },
-              }}
-            >
-              <Grid
-                item
-                xs={12}
-                md={6}
-                sx={{
-                  paddingX: {
-                    md: '0',
-                    xs: '2rem',
-                  },
-                }}
-              >
-                <ResponsiveContainer width="100%" height="100%">
-                  <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
-                    <PolarGrid />
-                    <PolarAngleAxis dataKey="subject" />
-                    <PolarRadiusAxis />
-                    <Radar
-                      name="Mike"
-                      dataKey="A"
-                      stroke="#e21a6dd2"
-                      fill="#e21a6dd2"
-                      fillOpacity={0.6}
-                    />
-                  </RadarChart>
-                </ResponsiveContainer>
-              </Grid>
-              <Grid
-                item
-                xs={12}
-                md={6}
-                sx={{
-                  paddingX: {
-                    md: '0',
-                    xs: '2rem',
-                  },
-                  mt: {
-                    md: 0,
-                    xs: '1rem',
-                  },
-                }}
-              >
-                <Image
-                  src={experienceImage}
-                  alt=""
-                  style={{
-                    width: '100%',
-                    maxWidth: '360px',
-                    height: 'auto',
-                    objectFit: 'cover',
-                    zIndex: 1,
-                    display: 'block',
-                  }}
-                />
-              </Grid>
-            </Grid>
+            </Fade>
           </Content>
         </Box>
       </Grid>
