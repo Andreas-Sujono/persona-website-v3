@@ -47,7 +47,11 @@ function BlogsPage({ articles }: { articles: Article[] }) {
   };
 
   return (
-    <Box>
+    <Box
+      sx={{
+        pb: '3rem',
+      }}
+    >
       <NavBar />
       <Box
         sx={{
@@ -61,15 +65,33 @@ function BlogsPage({ articles }: { articles: Article[] }) {
         sx={{
           position: 'relative',
           zIndex: 3,
+          paddingX: '1rem',
+          paddingTop: {
+            md: 5,
+            xs: 3,
+          },
         }}
       >
-        <Grid container sx={{ mt: 1 }} spacing={4}>
+        <Grid
+          container
+          sx={{ mt: 1, paddingX: '1rem' }}
+          spacing={{
+            md: 4,
+            xs: 3,
+          }}
+        >
           <Grid item xs={12} md={6.5} sx={{}}>
             <MainCard article={mainArticle} />
           </Grid>
           <Grid item xs={12} md={5.5}>
             <SideCard article={sideArticle1} />
-            <SideCard mt={1.8} article={sideArticle2} />
+            <SideCard
+              mt={{
+                md: 1.8,
+                xs: 2.5,
+              }}
+              article={sideArticle2}
+            />
           </Grid>
         </Grid>
         <Grid container sx={{ mt: 3 }} spacing={1}>
@@ -97,9 +119,24 @@ function BlogsPage({ articles }: { articles: Article[] }) {
                 md: '3rem',
                 xs: 0,
               },
+              position: {
+                md: 'sticky',
+                xs: 'sticky',
+              },
+              top: '200px',
             }}
           >
-            <JoinMedium />
+            <Box
+              sx={{
+                position: {
+                  md: 'sticky',
+                  xs: 'static',
+                },
+                top: '100px',
+              }}
+            >
+              <JoinMedium />
+            </Box>
           </Grid>
         </Grid>
       </Content>

@@ -48,8 +48,9 @@ const nextConfig = {
   ) {
     return {
       '/': { page: '/' },
-      '/#': { page: '/' },
-      '/#/blogs': { page: '/blogs' },
+      // '/#': { page: '/' },
+      '/blogs': { page: '/blogs' },
+      // '/#/blogs': { page: '/blogs' },
     };
   },
   async headers() {
@@ -65,7 +66,7 @@ const nextConfig = {
     unoptimized: true,
   },
   reactStrictMode: true,
-  assetPrefix: isProd ? '/#' : undefined,
+  // assetPrefix: isProd ? '/#' : undefined,
 };
 
 module.exports = nextConfig;

@@ -27,7 +27,7 @@ const navbarItems = [
   },
   {
     label: 'Contact Me',
-    path: '/contact-me',
+    path: '/#footer',
   },
 ];
 
@@ -39,6 +39,7 @@ function MobileNav({
   isSticky: boolean;
 }) {
   const theme = useTheme();
+  const { push } = useRouter();
 
   return (
     <Box
@@ -64,6 +65,7 @@ function MobileNav({
           sx={{
             mb: '1.5rem',
           }}
+          onClick={() => push(item.path)}
         >
           <Text
             sx={{
