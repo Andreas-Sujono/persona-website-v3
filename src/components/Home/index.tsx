@@ -62,6 +62,7 @@ export default function Home() {
       <Gallery />
       <Content>
         <Box
+          id="support-me"
           sx={{
             display: 'flex',
             flexWrap: 'wrap',

@@ -11,6 +11,7 @@ import SearchBar from 'components/common/Form/SearchBar';
 import BlogCard from './BlogCard/CardV2';
 import axios from 'axios';
 import JoinMedium from 'components/Ads/JoinMedium';
+import Footer from 'components/Home/Footer';
 
 export interface Article {
   title: string;
@@ -47,100 +48,103 @@ function BlogsPage({ articles }: { articles: Article[] }) {
   };
 
   return (
-    <Box
-      sx={{
-        pb: '3rem',
-      }}
-    >
-      <NavBar />
+    <>
       <Box
         sx={{
-          width: '100%',
-          height: '30vw',
-          position: 'absolute',
-          background: theme.bg.secondary,
-        }}
-      />
-      <Content
-        sx={{
-          position: 'relative',
-          zIndex: 3,
-          paddingX: '1rem',
-          paddingTop: {
-            md: 5,
-            xs: 3,
-          },
+          pb: '3rem',
         }}
       >
-        <Grid
-          container
-          sx={{ mt: 1, paddingX: '1rem' }}
-          spacing={{
-            md: 4,
-            xs: 3,
+        <NavBar />
+        <Box
+          sx={{
+            width: '100%',
+            height: '30vw',
+            position: 'absolute',
+            background: theme.bg.secondary,
+          }}
+        />
+        <Content
+          sx={{
+            position: 'relative',
+            zIndex: 3,
+            paddingX: '1rem',
+            paddingTop: {
+              md: 5,
+              xs: 3,
+            },
           }}
         >
-          <Grid item xs={12} md={6.5} sx={{}}>
-            <MainCard article={mainArticle} />
-          </Grid>
-          <Grid item xs={12} md={5.5}>
-            <SideCard article={sideArticle1} />
-            <SideCard
-              mt={{
-                md: 1.8,
-                xs: 2.5,
-              }}
-              article={sideArticle2}
-            />
-          </Grid>
-        </Grid>
-        <Grid container sx={{ mt: 3 }} spacing={1}>
-          <Grid item xs={12} md={6.5} sx={{}}>
-            <SearchBar
-              fullWidth
-              placeholder="Search blogs"
-              onChange={(e) => onSearch(e.target.value)}
-            />
-            {allArticles.map((article: Article, idx: number) => (
-              <BlogCard
-                mt={idx === 0 ? 4 : 0}
-                mb={2}
-                article={article}
-                key={article.title}
-              />
-            ))}
-          </Grid>
           <Grid
-            item
-            xs={12}
-            md={5}
-            sx={{
-              ml: {
-                md: '3rem',
-                xs: 0,
-              },
-              position: {
-                md: 'sticky',
-                xs: 'sticky',
-              },
-              top: '200px',
+            container
+            sx={{ mt: 1, paddingX: '1rem' }}
+            spacing={{
+              md: 4,
+              xs: 3,
             }}
           >
-            <Box
+            <Grid item xs={12} md={6.5} sx={{}}>
+              <MainCard article={mainArticle} />
+            </Grid>
+            <Grid item xs={12} md={5.5}>
+              <SideCard article={sideArticle1} />
+              <SideCard
+                mt={{
+                  md: 1.8,
+                  xs: 2.5,
+                }}
+                article={sideArticle2}
+              />
+            </Grid>
+          </Grid>
+          <Grid container sx={{ mt: 3 }} spacing={1}>
+            <Grid item xs={12} md={6.5} sx={{}}>
+              <SearchBar
+                fullWidth
+                placeholder="Search blogs"
+                onChange={(e) => onSearch(e.target.value)}
+              />
+              {allArticles.map((article: Article, idx: number) => (
+                <BlogCard
+                  mt={idx === 0 ? 4 : 0}
+                  mb={2}
+                  article={article}
+                  key={article.title}
+                />
+              ))}
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              md={5}
               sx={{
+                ml: {
+                  md: '3rem',
+                  xs: 0,
+                },
                 position: {
                   md: 'sticky',
-                  xs: 'static',
+                  xs: 'sticky',
                 },
-                top: '100px',
+                top: '200px',
               }}
             >
-              <JoinMedium />
-            </Box>
+              <Box
+                sx={{
+                  position: {
+                    md: 'sticky',
+                    xs: 'static',
+                  },
+                  top: '100px',
+                }}
+              >
+                <JoinMedium />
+              </Box>
+            </Grid>
           </Grid>
-        </Grid>
-      </Content>
-    </Box>
+        </Content>
+      </Box>
+      <Footer />
+    </>
   );
 }
 

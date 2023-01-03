@@ -17,6 +17,7 @@ function MainProjects() {
 
   return (
     <Box
+      id="projects"
       sx={{
         padding: {
           md: '4rem',

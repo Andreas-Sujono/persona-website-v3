@@ -22,6 +22,7 @@ function Footer() {
         mt: '4rem',
         color: textColor,
       }}
+      id="footer"
     >
       <Content>
         <Box

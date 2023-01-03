@@ -50,13 +50,11 @@ As a software engineer, I love to solve real problem by making things that chang
 
 ## Pending
 - nav scroll track
+- onclick or hover link --> style underline
+
 - side project
 - main project & side project on click --> open modal
 - ads modal
-- blogs
 - api call to get data --> statistic, POST subscribe, call ads modal data, etc
 - setup --> blog, support me, join community, join class, subsribe
-- blog page
 - contact me page
-- onclick or hover link --> style underline
-- responsiveness
