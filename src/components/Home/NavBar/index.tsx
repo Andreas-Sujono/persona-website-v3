@@ -70,10 +70,11 @@ function MobileNav({
         width: '100%',
         background: theme.bg.primary,
         padding: isOpen ? '1rem' : '0',
-        height: isOpen ? '280px' : 0,
+        height: isOpen ? '262px' : 0,
         overflow: 'hidden',
         transition: 'all 0.22s ease-in-out',
         boxSizing: 'border-box',
+        paddingBottom: 0,
       }}
     >
       <Grid

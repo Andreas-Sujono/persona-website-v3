@@ -75,11 +75,13 @@ export default function Home() {
               xs: 'center',
             },
             alignItems: 'center',
-            '> *': {
-              mb: '2rem',
-            },
+
             '> *:not(:last-child)': {
               mr: isMobile ? 0 : '1rem',
+              mb: {
+                md: '2rem',
+                xs: '4rem',
+              },
             },
             paddingY: {
               md: '3rem',

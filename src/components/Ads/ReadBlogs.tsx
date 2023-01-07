@@ -5,6 +5,8 @@ import Image from 'next/image';
 import { Box } from '@mui/material';
 import { useTheme } from 'hooks/common';
 import bgImage from 'assets/home/read-blog.webp';
+import Link from 'next/link';
+import { url } from 'const/config';
 
 function ReadBlogs() {
   const theme = useTheme();
@@ -60,17 +62,19 @@ function ReadBlogs() {
         Updated new and technologies in frontend development and software
         engineering in general
       </Text>
-      <Button
-        sx={{
-          position: 'absolute',
-          bottom: '-16px',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          background: theme.bg.gradient,
-        }}
-      >
-        Check it out!
-      </Button>
+      <Link href={'/blogs'}>
+        <Button
+          sx={{
+            position: 'absolute',
+            bottom: '-16px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            background: theme.bg.gradient,
+          }}
+        >
+          Check it out!
+        </Button>
+      </Link>
     </Box>
   );
 }

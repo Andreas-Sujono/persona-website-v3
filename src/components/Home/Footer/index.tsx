@@ -27,70 +27,73 @@ function Footer() {
       id="footer"
     >
       <Content>
-        <Box
-          sx={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            background: theme.text.highlight,
-            height: '150px',
-            padding: {
-              md: '2rem',
-              xs: '1rem',
-            },
-            borderRadius: '1rem',
-          }}
-        >
-          <Text
-            sx={{
-              mr: '2rem',
-              color: titleTextColor,
-              fontSize: {
-                md: '2.4rem',
-                xs: '2rem',
-              },
-              mb: {
-                md: 0,
-                xs: '0rem',
-              },
-            }}
-          >
-            Subscribe Newsletter
-          </Text>
+        {COMPANY.enableLocalSubscription && (
           <Box
             sx={{
-              flexGrow: 1,
               display: 'flex',
+              flexWrap: 'wrap',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              background: theme.text.highlight,
+              height: '150px',
+              padding: {
+                md: '2rem',
+                xs: '1rem',
+              },
+              borderRadius: '1rem',
             }}
           >
-            <TextInput
-              fullWidth
-              placeholder="Enter Your Email Address"
+            <Text
               sx={{
-                mr: {
-                  md: '2rem',
-                  xs: '1rem',
-                },
+                mr: '2rem',
                 color: titleTextColor,
-              }}
-            />
-            <Button
-              sx={{
-                background: '#6485F9',
-                fontSize: '1rem',
-                width: 'max-content',
-                minWidth: 'auto',
+                fontSize: {
+                  md: '2.4rem',
+                  xs: '2rem',
+                },
+                mb: {
+                  md: 0,
+                  xs: '0rem',
+                },
               }}
             >
-              Subscribe
-            </Button>
+              Subscribe Newsletter
+            </Text>
+            <Box
+              sx={{
+                flexGrow: 1,
+                display: 'flex',
+              }}
+            >
+              <TextInput
+                fullWidth
+                placeholder="Enter Your Email Address"
+                sx={{
+                  mr: {
+                    md: '2rem',
+                    xs: '1rem',
+                  },
+                  color: titleTextColor,
+                }}
+              />
+              <Button
+                sx={{
+                  background: '#6485F9',
+                  fontSize: '1rem',
+                  width: 'max-content',
+                  minWidth: 'auto',
+                }}
+              >
+                Subscribe
+              </Button>
+            </Box>
           </Box>
-        </Box>
+        )}
+
         <Grid
           container
           sx={{
-            mt: '3rem',
+            mt: COMPANY.enableLocalSubscription ? '3rem' : 0,
             '> *': {
               mb: '2rem',
             },
@@ -190,7 +193,7 @@ function Footer() {
               }}
               className="nav-item"
             >
-              <Link href={url.JOIN_COMMUNITY_URL} target="_blank">
+              <Link href={url.JOIN_COMMUNITY} target="_blank">
                 Join Community
               </Link>
             </Text>

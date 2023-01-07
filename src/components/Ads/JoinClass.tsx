@@ -6,6 +6,8 @@ import { Box } from '@mui/material';
 import { useTheme } from 'hooks/common';
 import bgImage from 'assets/home/join-class.webp';
 import useWindowDimensions from 'hooks/common/useDimension';
+import Link from 'next/link';
+import { url } from 'const/config';
 
 function JoinClass() {
   const theme = useTheme();
@@ -59,19 +61,22 @@ function JoinClass() {
           Upskills your skills to learn the most up to date web frontend
           technologies and other software enginering skills
         </Text>
-        <Button
-          sx={{
-            position: 'absolute',
-            bottom: {
-              md: '-42px',
-              xs: '-36px',
-            },
-            left: 0,
-            background: theme.bg.gradient,
-          }}
-        >
-          Join Class
-        </Button>
+        <Link href={url.JOIN_CLASS_URL}>
+          <Button
+            sx={{
+              position: 'absolute',
+              bottom: {
+                md: '-42px',
+                xs: '-36px',
+              },
+              left: 0,
+              background: theme.bg.gradient,
+            }}
+            disabled
+          >
+            COMING SOON
+          </Button>
+        </Link>
       </Box>
       <Box
         sx={{

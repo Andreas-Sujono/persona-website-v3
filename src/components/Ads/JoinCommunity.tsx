@@ -5,6 +5,8 @@ import Image from 'next/image';
 import { Box } from '@mui/material';
 import { useTheme } from 'hooks/common';
 import bgImage from 'assets/home/join-community.webp';
+import Link from 'next/link';
+import { url } from 'const/config';
 
 function JoinCommunity() {
   const theme = useTheme();
@@ -60,18 +62,20 @@ function JoinCommunity() {
         Join No1 community to learn up to date news and technologies in frontend
         development
       </Text>
-      <Button
-        sx={{
-          position: 'absolute',
-          bottom: '-16px',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          background: theme.bg.gradient,
-          whiteSpace: 'nowrap',
-        }}
-      >
-        Join Community
-      </Button>
+      <Link href={url.JOIN_COMMUNITY} target="_blank">
+        <Button
+          sx={{
+            position: 'absolute',
+            bottom: '-16px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            background: theme.bg.gradient,
+            whiteSpace: 'nowrap',
+          }}
+        >
+          Join Community
+        </Button>
+      </Link>
     </Box>
   );
 }

@@ -5,6 +5,8 @@ import Image from 'next/image';
 import { Box } from '@mui/material';
 import { useTheme } from 'hooks/common';
 import bgImage from 'assets/home/read-blog.webp';
+import Link from 'next/link';
+import { url } from 'const/config';
 
 function JoinMedium() {
   const theme = useTheme();
@@ -60,18 +62,20 @@ function JoinMedium() {
         Want to support me? Subscribe to Medium using my referral link and enjoy
         millions of posts from various topic
       </Text>
-      <Button
-        sx={{
-          position: 'absolute',
-          bottom: '-16px',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          background: theme.bg.gradient,
-          whiteSpace: 'nowrap',
-        }}
-      >
-        Subscribe Medium
-      </Button>
+      <Link href={url.SUBSRIBE_MEDIUM} target="_blank">
+        <Button
+          sx={{
+            position: 'absolute',
+            bottom: '-16px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            background: theme.bg.gradient,
+            whiteSpace: 'nowrap',
+          }}
+        >
+          Subscribe Medium
+        </Button>
+      </Link>
     </Box>
   );
 }

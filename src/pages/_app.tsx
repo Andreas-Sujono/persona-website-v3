@@ -26,6 +26,36 @@ export default function App({ Component, pageProps }: AppProps) {
           content="seo, search engine optimization, Andreas Sujono, full stack engineer, hiring, frontend developer, frontend engineer, engineer, tech, student, nanyang technological university"
         />
         <link rel="icon" href="/favicon_ico/favicon.ico" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="http://andreassujono.com/" />
+        <meta
+          property="og:title"
+          content="Andreas Sujono - Full Stack Engineer"
+        />
+        <meta
+          property="og:description"
+          content="Andreas is a passionate and tech enthusiast with 4 years of working experience in 7 different companies with diverse industries such as robotics, ed-tech, gaming, blockchain, data, and cybersecurity company. He is well known for his website development skills in both frontend and backend sides which follow the best practice and clean architecture."
+        />
+        <meta
+          property="og:image"
+          content="https://andreas-general.s3.ap-southeast-1.amazonaws.com/personal-website-og.png"
+        />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="http://andreassujono.com/" />
+        <meta
+          property="twitter:title"
+          content="Andreas Sujono - Full Stack Engineer"
+        />
+        <meta
+          property="twitter:description"
+          content="Andreas is a passionate and tech enthusiast with 4 years of working experience in 7 different companies with diverse industries such as robotics, ed-tech, gaming, blockchain, data, and cybersecurity company. He is well known for his website development skills in both frontend and backend sides which follow the best practice and clean architecture."
+        />
+        <meta
+          property="twitter:image"
+          content="https://andreas-general.s3.ap-southeast-1.amazonaws.com/personal-website-og.png"
+        />
       </Head>
 
       <Script

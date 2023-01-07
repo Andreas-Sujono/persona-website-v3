@@ -5,6 +5,8 @@ import Image from 'next/image';
 import { Box } from '@mui/material';
 import { useTheme } from 'hooks/common';
 import bgImage from 'assets/home/support-me.webp';
+import Link from 'next/link';
+import { url } from 'const/config';
 
 function SupportMe() {
   const theme = useTheme();
@@ -59,17 +61,19 @@ function SupportMe() {
       >
         Support me by buying me coffee or subscribe to my newsletter
       </Text>
-      <Button
-        sx={{
-          position: 'absolute',
-          bottom: '-16px',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          background: theme.bg.gradient,
-        }}
-      >
-        Support Me
-      </Button>
+      <Link href={url.SUPPORT_ME_URL} target="_blank">
+        <Button
+          sx={{
+            position: 'absolute',
+            bottom: '-16px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            background: theme.bg.gradient,
+          }}
+        >
+          Support Me
+        </Button>
+      </Link>
     </Box>
   );
 }
