@@ -90,6 +90,13 @@ function ProjectCertificates() {
                 md: '0',
                 xs: '60px',
               },
+              '& img': {
+                transition: 'all 0.2s ease-in-out',
+              },
+              '& img:hover': {
+                transform: 'scale(1.12, 1.12)',
+                zIndex: 10,
+              },
             }}
           >
             <Carousel3d slides={slides} autoplay interval={3000} arrows />

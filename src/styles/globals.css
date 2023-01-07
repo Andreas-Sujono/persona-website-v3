@@ -47,3 +47,24 @@ a {
 fieldset {
   border: 0 !important;
 }
+
+.nav-item{
+  position: relative;
+  transition: all 0.22s ease-in-out;
+  width: max-content;
+  cursor: pointer;
+}
+.nav-item:not(.nav-active)::after{
+  content: '';
+  background: linear-gradient(90.15deg, #E21A6E 0.68%, #6485F9 99.87%);
+  width: 0;
+  height: 2px;
+  display: block;
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  transition: all 0.22s ease-in-out;
+}
+.nav-item:hover::after{
+  width: 100%;
+}

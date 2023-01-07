@@ -9,7 +9,15 @@ import useWindowDimensions from 'hooks/common/useDimension';
 
 function Gallery() {
   const { width } = useWindowDimensions();
-  const column = width > 1000 ? [1, 2, 3, 4] : [1, 2, 3];
+  const isTablet = width < 1200;
+  const isMobile = width < 500;
+  let column = [1, 2, 3, 4];
+  if (isTablet) {
+    column = [1, 2, 3];
+  }
+  if (isMobile) {
+    column = [1, 2];
+  }
   const { length } = galleryData;
   const columnLength = column.length;
   const galleryChosen = (idx: number) =>

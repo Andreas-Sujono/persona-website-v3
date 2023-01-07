@@ -113,7 +113,7 @@ const darkTheme = {
   tonalOffset: 0.2,
 };
 
-const chosenTheme = lightTheme;
+const chosenTheme = darkTheme;
 
 const defaultTheme: ThemeContext = {
   theme: chosenTheme === lightTheme ? 'light' : 'dark',

@@ -1,17 +1,34 @@
 import React, { memo, useState, useRef } from 'react';
-import Text from 'components/common/Text';
-import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import { Box, Grid } from '@mui/material';
 import NavBar from '../Home/NavBar';
 import Content from 'components/common/Container/Content';
 import { useTheme } from 'hooks/common';
-import MainCard from './BlogCard/MainCard';
-import SideCard from './BlogCard/SideCard';
-import SearchBar from 'components/common/Form/SearchBar';
-import BlogCard from './BlogCard/CardV2';
+// import MainCard from './BlogCard/MainCard';
+// import SideCard from './BlogCard/SideCard';
+// import SearchBar from 'components/common/Form/SearchBar';
+// import BlogCard from './BlogCard/CardV2';
 import axios from 'axios';
 import JoinMedium from 'components/Ads/JoinMedium';
-import Footer from 'components/Home/Footer';
+// import Footer from 'components/Home/Footer';
+
+const MainCard = dynamic(() => import('./BlogCard/MainCard'), {
+  loading: () => <></>,
+});
+const SideCard = dynamic(() => import('./BlogCard/SideCard'), {
+  loading: () => <></>,
+});
+const BlogCard = dynamic(() => import('./BlogCard/CardV2'), {
+  loading: () => <></>,
+});
+
+const SearchBar = dynamic(() => import('components/common/Form/SearchBar'), {
+  loading: () => <></>,
+});
+
+const Footer = dynamic(() => import('components/Home/Footer'), {
+  loading: () => <></>,
+});
 
 export interface Article {
   title: string;

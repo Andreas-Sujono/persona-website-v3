@@ -8,6 +8,7 @@ import useWindowDimensions from 'hooks/common/useDimension';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useRouter } from 'next/router';
 import { Link as SamePageLink } from 'react-scroll';
+import CloseIcon from '@mui/icons-material/Close';
 
 /**
  * same path --> many id link, or onlyPath
@@ -49,10 +50,10 @@ const navbarItems = [
 
 function MobileNav({
   isOpen,
-  isSticky,
+  onClose,
 }: {
   isOpen: boolean;
-  isSticky: boolean;
+  onClose: () => void;
 }) {
   const theme = useTheme();
   const { push, pathname } = useRouter();
@@ -64,17 +65,42 @@ function MobileNav({
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        position: isSticky ? 'sticky' : 'fixed',
-        top: '80px',
+        position: 'fixed',
+        top: '0',
         width: '100%',
         background: theme.bg.primary,
-        paddingTop: isOpen ? '0' : 0,
-        height: isOpen ? '215px' : 0,
+        padding: isOpen ? '1rem' : '0',
+        height: isOpen ? '280px' : 0,
         overflow: 'hidden',
-        transition: 'all 0.25s ease-in-out',
+        transition: 'all 0.22s ease-in-out',
         boxSizing: 'border-box',
       }}
     >
+      <Grid
+        container
+        alignItems="center"
+        justifyContent={'space-between'}
+        maxWidth="lg"
+      >
+        <Grid item>
+          <Image
+            src={avatarImage}
+            alt="Andreas"
+            style={{
+              width: '36px',
+              height: '36px',
+              borderRadius: '50%',
+              objectFit: 'cover',
+            }}
+          />
+        </Grid>
+        <CloseIcon
+          sx={{
+            color: theme.text.primary,
+          }}
+          onClick={onClose}
+        />
+      </Grid>
       {navbarItems.map((item, idx) => {
         const samePath =
           (pathname === '/' && item.route === '/') ||
@@ -146,7 +172,7 @@ function MobileNav({
 function NavBar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [offsetTop, setOffsetTop] = useState(0);
-  const [isSticky, setIsSticky] = useState(false);
+  // const [isSticky, setIsSticky] = useState(false);
   const theme = useTheme();
   const containerRef = useRef<any>(null);
   const { width } = useWindowDimensions();
@@ -160,10 +186,10 @@ function NavBar() {
   useEffect(() => {
     const fn = () => {
       if (window.scrollY < offsetTop - 100) {
-        setIsNavOpen(false);
-        setIsSticky(true);
+        // setIsNavOpen(false);
+        // setIsSticky(true);
       } else if (window.scrollY > offsetTop - 100) {
-        setIsSticky(false);
+        // setIsSticky(false);
       }
     };
     fn();
@@ -229,6 +255,7 @@ function NavBar() {
                 {samePath && (
                   <SamePageLink
                     activeClass="nav-active"
+                    className="nav-item"
                     to={item.id}
                     spy
                     smooth
@@ -258,6 +285,7 @@ function NavBar() {
                         color: theme.text.primary,
                         cursor: 'pointer',
                       }}
+                      className="nav-item"
                     >
                       {item.label}
                     </Text>
@@ -285,7 +313,7 @@ function NavBar() {
             }}
             onChange={theme.switchTheme}
           />
-          {isMobile && !isSticky && (
+          {isMobile && (
             <MenuIcon
               sx={{
                 color: theme.text.primary,
@@ -295,7 +323,9 @@ function NavBar() {
           )}
         </Box>
       </Grid>
-      {isMobile && <MobileNav isOpen={isNavOpen} isSticky={isSticky} />}
+      {isMobile && (
+        <MobileNav isOpen={isNavOpen} onClose={() => setIsNavOpen(false)} />
+      )}
     </Box>
   );
 }

@@ -60,9 +60,10 @@ function AboutMe() {
       container
       justifyContent="space-between"
       sx={{
-        paddingTop: '5rem',
+        paddingTop: isMobile ? '3rem' : '5rem',
         flexDirection: isMobile ? 'column-reverse' : 'row',
       }}
+      id="about-me"
     >
       <Grid item xs={true}>
         <Box

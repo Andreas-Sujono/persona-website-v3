@@ -40,6 +40,14 @@ const galleryData = [
     description: '...',
     otherImage: [],
   },
+  {
+    image:
+      'https://res.cloudinary.com/dx6juznlw/image/upload/v1622651335/vegan-recipe-app/andreas-website/gallery/gallery_nature3_m5kroy.jpg',
+    alt: 'gallery_nature3',
+    title: '',
+    description: '...',
+    otherImage: [],
+  },
   // {
   //   image:
   //     'https://res.cloudinary.com/dx6juznlw/image/upload/v1622651334/vegan-recipe-app/andreas-website/gallery/gallery_ICNIT_z26jfd.jpg',
@@ -85,14 +93,6 @@ const galleryData = [
     image:
       'https://res.cloudinary.com/dx6juznlw/image/upload/v1622651334/vegan-recipe-app/andreas-website/gallery/gallery_nature2_fc2gzo.jpg',
     alt: 'gallery_nature2',
-    title: '',
-    description: '...',
-    otherImage: [],
-  },
-  {
-    image:
-      'https://res.cloudinary.com/dx6juznlw/image/upload/v1622651335/vegan-recipe-app/andreas-website/gallery/gallery_nature3_m5kroy.jpg',
-    alt: 'gallery_nature3',
     title: '',
     description: '...',
     otherImage: [],

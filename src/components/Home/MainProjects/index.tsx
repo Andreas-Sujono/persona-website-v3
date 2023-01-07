@@ -10,6 +10,24 @@ import { useTheme } from 'hooks/common';
 import useWindowDimensions from 'hooks/common/useDimension';
 import Fade from 'react-reveal/Fade';
 
+function ImageCard({ style, image }: { style: any; image: any }) {
+  return (
+    <Box
+      sx={{
+        '& img': {
+          transition: 'all 0.2s ease-in-out',
+        },
+        '& img:hover': {
+          transform: 'scale(1.08, 1.08)',
+          zIndex: 10,
+        },
+      }}
+    >
+      <Image src={image} alt="mainProject" style={style} />
+    </Box>
+  );
+}
+
 function MainProjects() {
   const theme = useTheme();
   const { width } = useWindowDimensions();
@@ -64,40 +82,37 @@ function MainProjects() {
                 },
               }}
             >
-              <Image
-                src={mainProjectImage}
-                alt="mainProject"
+              <ImageCard
+                image={mainProjectImage}
                 style={{
                   width: 'auto',
                   maxWidth: isMobile ? '60vw' : '40vw',
                   height: 'auto',
-                  objectFit: 'cover',
+                  objectFit: 'contain',
                   position: 'absolute',
                   top: 0,
                   left: 0,
                 }}
               />
-              <Image
-                src={mainProject2Image}
-                alt="mainProject"
+              <ImageCard
+                image={mainProject2Image}
                 style={{
                   width: 'auto',
                   maxWidth: isMobile ? '50vw' : '36vw',
                   height: 'auto',
-                  objectFit: 'cover',
+                  objectFit: 'contain',
                   position: 'absolute',
                   top: '20%',
                   left: '40%',
                 }}
               />
-              <Image
-                src={mainProject3Image}
-                alt="mainProject"
+              <ImageCard
+                image={mainProject3Image}
                 style={{
                   width: 'auto',
                   maxWidth: isMobile ? '60vw' : '30vw',
                   height: 'auto',
-                  objectFit: 'cover',
+                  objectFit: 'contain',
                   position: 'absolute',
                   top: '40%',
                   left: '10%',

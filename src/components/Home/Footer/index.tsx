@@ -7,6 +7,8 @@ import TextInput from 'components/common/Form/TextInput';
 import Button from 'components/common/Button';
 import { useTheme } from 'hooks/common';
 import avatarImage from 'assets/home/avatar.webp';
+import Link from 'next/link';
+import { COMPANY, url } from 'const/config';
 
 function Footer() {
   const theme = useTheme();
@@ -163,38 +165,46 @@ function Footer() {
             <Text
               sx={{
                 fontSize: '1rem',
-                mb: '0.5rem',
+                mb: '0.8rem',
                 color: textColor,
               }}
+              className="nav-item"
             >
-              About Me
+              <Link href="/#about-me">About Me</Link>
             </Text>
             <Text
               sx={{
                 fontSize: '1rem',
-                mb: '0.5rem',
+                mb: '0.8rem',
                 color: textColor,
               }}
+              className="nav-item"
             >
-              Blogs
+              <Link href="/blogs">Blogs</Link>
             </Text>
             <Text
               sx={{
                 fontSize: '1rem',
-                mb: '0.5rem',
+                mb: '0.8rem',
                 color: textColor,
               }}
+              className="nav-item"
             >
-              Join Community
+              <Link href={url.JOIN_COMMUNITY_URL} target="_blank">
+                Join Community
+              </Link>
             </Text>
             <Text
               sx={{
                 fontSize: '1rem',
-                mb: '0.5rem',
+                mb: '0.8rem',
                 color: textColor,
               }}
+              className="nav-item"
             >
-              Support Me
+              <Link href={url.SUPPORT_ME_URL} target="_blank">
+                Support Me
+              </Link>
             </Text>
           </Grid>
           <Grid
@@ -221,8 +231,9 @@ function Footer() {
                 mb: '0.5rem',
                 color: textColor,
               }}
+              className="nav-item"
             >
-              andreassujono@gmail.com
+              <Link href={`mailto:${COMPANY.email}`}>{COMPANY.email}</Link>
             </Text>
             <Text
               sx={{
@@ -231,7 +242,7 @@ function Footer() {
                 color: textColor,
               }}
             >
-              +6583066172
+              {COMPANY.phoneNumber}
             </Text>
           </Grid>
         </Grid>
@@ -251,7 +262,7 @@ function Footer() {
           fontSize: '0.9rem',
         }}
       >
-        @Copyright 2022 Andreas Sujono - All rights reserved
+        @Copyright {COMPANY.year} {COMPANY.name} - All rights reserved
       </Text>
     </Box>
   );
