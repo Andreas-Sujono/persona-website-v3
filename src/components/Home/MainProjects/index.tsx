@@ -103,7 +103,7 @@ function MainProjects() {
                   objectFit: 'contain',
                   position: 'absolute',
                   top: '20%',
-                  left: '40%',
+                  left: isMobile ? '40%' : '50%',
                 }}
               />
               <ImageCard
@@ -114,7 +114,7 @@ function MainProjects() {
                   height: 'auto',
                   objectFit: 'contain',
                   position: 'absolute',
-                  top: '40%',
+                  top: '50%',
                   left: '10%',
                 }}
               />
