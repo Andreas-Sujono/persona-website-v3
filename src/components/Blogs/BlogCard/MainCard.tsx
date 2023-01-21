@@ -24,16 +24,21 @@ export default function MainCard({ article }: Props) {
         <Box
           sx={{
             p: 1.5,
+            paddingTop: 1,
           }}
         >
           <Text
             sx={{
               fontSize: '1.5rem',
               fontWeight: 'bold',
-              overflow: 'hidden',
               maxWidth: '100%',
-              whiteSpace: 'nowrap',
+
+              overflow: 'hidden',
               textOverflow: 'ellipsis',
+              display: '-webkit-box',
+              WebkitLineClamp: 2,
+              lineClamp: 2,
+              WebkitBoxOrient: 'vertical',
             }}
           >
             {article.title}

@@ -56,7 +56,7 @@ function Statistics() {
       </Box>
       <Box>
         <StyledTitle color={theme.text.highlight}>
-          <CountUp end={12} />+
+          <CountUp end={13} />+
         </StyledTitle>
         <Text
           sx={{
@@ -69,7 +69,7 @@ function Statistics() {
       </Box>
       <Box>
         <StyledTitle color={theme.text.highlight}>
-          <CountUp end={4580} />+
+          <CountUp end={7860} />+
         </StyledTitle>
         <Text
           sx={{
@@ -82,7 +82,7 @@ function Statistics() {
       </Box>
       <Box>
         <StyledTitle color={theme.text.highlight}>
-          <CountUp end={78} />
+          <CountUp end={80} />
         </StyledTitle>
 
         <Text

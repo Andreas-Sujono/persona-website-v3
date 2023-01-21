@@ -1,4 +1,4 @@
-import React, { memo, useState, useRef } from 'react';
+import React, { memo, useState, useRef, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import { Box, Grid } from '@mui/material';
 import NavBar from '../Home/NavBar';
@@ -42,14 +42,15 @@ export interface Article {
 function BlogsPage({ articles }: { articles: Article[] }) {
   const theme = useTheme();
   const [searchInput, setSearchInput] = useState('');
+  const [allArticles, setAllArticles] = useState(articles);
   const [searchRes, setSearchRes] = useState(articles || []);
   const searchRef = useRef<any>(null);
 
   // console.log('articles: ', articles);
-  const mainArticle = articles[0];
-  const sideArticle1 = articles[1];
-  const sideArticle2 = articles[2];
-  const allArticles = searchRes;
+  const mainArticle = allArticles[0];
+  const sideArticle1 = allArticles[1];
+  const sideArticle2 = allArticles[2];
+  const finalArticles = searchInput ? searchRes : allArticles;
 
   const onSearch = (value: string) => {
     setSearchInput(value);
@@ -59,9 +60,19 @@ function BlogsPage({ articles }: { articles: Article[] }) {
     searchRef.current = setTimeout(() => {
       const regex = new RegExp(value, 'ig');
       // console.log(articles.filter((item) => item.title.match(regex)));
-      setSearchRes(articles.filter((item) => item.title.match(regex)));
+      setSearchRes(allArticles.filter((item) => item.title.match(regex)));
       searchRef.current = null;
     }, 100);
+  };
+
+  useEffect(() => {
+    getArticles();
+  }, []);
+
+  const getArticles = async () => {
+    const res = await getStaticProps();
+    const _articles = res?.props?.articles || [];
+    setAllArticles(_articles);
   };
 
   return (
@@ -120,7 +131,7 @@ function BlogsPage({ articles }: { articles: Article[] }) {
                 placeholder="Search blogs"
                 onChange={(e) => onSearch(e.target.value)}
               />
-              {allArticles.map((article: Article, idx: number) => (
+              {finalArticles.map((article: Article, idx: number) => (
                 <BlogCard
                   mt={idx === 0 ? 4 : 0}
                   mb={2}
