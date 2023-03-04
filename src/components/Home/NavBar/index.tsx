@@ -69,8 +69,8 @@ function MobileNav({
         top: '0',
         width: '100%',
         background: theme.bg.primary,
-        padding: isOpen ? '1rem' : '0',
-        height: isOpen ? '262px' : 0,
+        padding: isOpen ? '0rem 1rem' : '0',
+        height: isOpen ? '252px' : 0,
         overflow: 'hidden',
         transition: 'all 0.22s ease-in-out',
         boxSizing: 'border-box',
@@ -206,7 +206,10 @@ function NavBar() {
         top: 0,
         zIndex: 10,
         background: theme.bg.primary,
-        padding: '1rem 0 1rem 0',
+        padding: {
+          xs: '0.5rem 0',
+          md: '1rem 0',
+        },
         boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.05)',
       }}
       ref={containerRef}
@@ -225,16 +228,31 @@ function NavBar() {
         }}
       >
         <Grid item>
-          <Image
-            src={avatarImage}
-            alt="Andreas"
-            style={{
-              width: '48px',
-              height: '48px',
-              borderRadius: '50%',
-              objectFit: 'cover',
+          <Box
+            sx={{
+              width: {
+                sm: '36px',
+                md: '48px',
+              },
+              height: {
+                sm: '36px',
+                md: '48px',
+              },
             }}
-          />
+          >
+            <Image
+              src={avatarImage}
+              alt="Andreas"
+              style={{
+                width: isMobile ? '36px' : '48px',
+                height: isMobile ? '36px' : '48px',
+                maxWidth: '48px',
+                maxHeight: '48px',
+                borderRadius: '50%',
+                objectFit: 'cover',
+              }}
+            />
+          </Box>
         </Grid>
         {!isMobile &&
           navbarItems.map((item, idx) => {

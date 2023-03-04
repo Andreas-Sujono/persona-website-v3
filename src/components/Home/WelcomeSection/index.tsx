@@ -179,6 +179,7 @@ function WelcomeSection() {
           position: 'absolute',
           bottom: isMobile ? '44%' : '24%',
           right: '2%',
+          display: isMobile ? 'none' : 'initial',
         }}
         priority
         alt=""
