@@ -48,8 +48,8 @@ export default function MainCard({ article }: Props) {
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
-              mt: 1,
-              mb: 2,
+              mt: 0.4,
+              mb: 1,
             }}
           >
             <Text

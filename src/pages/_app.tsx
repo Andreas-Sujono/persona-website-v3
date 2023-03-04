@@ -39,7 +39,7 @@ export default function App({ Component, pageProps }: AppProps) {
         />
         <meta
           property="og:image"
-          content="https://andreas-general.s3.ap-southeast-1.amazonaws.com/personal-website-og.png"
+          content="https://andreas-general2.s3.ap-southeast-1.amazonaws.com/andreassujono/personal-website-og.png"
         />
 
         <meta property="twitter:card" content="summary_large_image" />
@@ -54,7 +54,7 @@ export default function App({ Component, pageProps }: AppProps) {
         />
         <meta
           property="twitter:image"
-          content="https://andreas-general.s3.ap-southeast-1.amazonaws.com/personal-website-og.png"
+          content="https://andreas-general2.s3.ap-southeast-1.amazonaws.com/andreassujono/personal-website-og.png"
         />
       </Head>
 

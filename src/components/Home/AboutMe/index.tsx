@@ -16,6 +16,7 @@ import {
 } from 'recharts';
 import useWindowDimensions from 'hooks/common/useDimension';
 import Fade from 'react-reveal/Fade';
+import useTheme from 'hooks/common/useTheme';
 
 const data = [
   {
@@ -52,6 +53,7 @@ const data = [
 
 function AboutMe() {
   const { width } = useWindowDimensions();
+  const theme = useTheme();
   const isMobile = width < 900;
   const isSuperMobile = width < 900;
 
@@ -60,16 +62,16 @@ function AboutMe() {
       container
       justifyContent="space-between"
       sx={{
-        paddingTop: isMobile ? '3rem' : '5rem',
         flexDirection: isMobile ? 'column-reverse' : 'row',
       }}
       id="about-me"
     >
-      <Grid item xs={true}>
+      <Grid item xs={true} sx={{}}>
         <Box
           sx={{
             paddingY: '2rem',
             position: 'relative',
+            paddingTop: isMobile ? '3rem' : '5rem',
           }}
         >
           <Content
@@ -215,10 +217,11 @@ function AboutMe() {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            height: isMobile ? '200px' : '800px',
+            height: isMobile ? '160px' : '800px',
+            background: theme.bg.secondary,
           }}
         >
-          <Image
+          {/* <Image
             src={bgImage}
             alt=""
             style={{
@@ -229,15 +232,16 @@ function AboutMe() {
               zIndex: 1,
               borderRadius: '1rem 0 0 1rem',
             }}
-          />
+          /> */}
           <Text
             sx={{
               zIndex: 2,
               fontSize: {
                 md: '3rem',
-                xs: '2.5rem',
+                sm: '2.5rem',
+                xs: '2rem',
               },
-              color: 'white',
+              color: theme.theme === 'dark' ? 'white' : theme.text.primary,
               fontFamily: 'Rock Salt',
               textShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
               position: 'absolute',
